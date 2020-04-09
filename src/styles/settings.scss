@@ -1,13 +1,79 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+//all colors, all defined variables are used. 01- the darkest hue
+$dark-gray-04: #434343;
+$dark-gray-03: #363636;
+$dark-gray-02: #2a2a2a;
+$dark-gray-01: #292929;
 
-$primary: #d58e32;
+$shadowGray: rgba(1, 2, 2, 0.2);
+ 
+$intensiveOrange: #d58e32;
 
-$text-color: #2a2a2a;
+$white: #ffffff;
 
-$form-border-color: #292929;
+$light-gray-07: #f4f5f7;
+$light-gray-06: #e2e2e2;
+$light-gray-05: #e1e1e1;
+$light-gray-04:#e0e3ed;
+$light-gray-03: rgb(216, 216, 216);
+$light-gray-02: #b6b6b6;
+$light-gray-01: rgb(169, 169, 169);
+
+
+// variable color assigned to variable by usage
+$productBox-photo-bg: $light-gray-07;
+
+$companyClaim-cartCounter: $light-gray-04;
+
+$menuBar-shadow: $shadowGray;
+
+$companyClaim-phone: $light-gray-03;
+
+$footer-a-p: $light-gray-01;
+
+$productBox-root-border-color: $light-gray-05;
+$newFurniture-a-bg: $light-gray-05;
+
+$panelBar-row-border-bottom-c: $light-gray-06;
+
+$root-border-color: $light-gray-02;
+$iconWrapper-before-color: $light-gray-02;
+$iconWrapper-after-color: $light-gray-02;
+
+$header-topbar-bg: $dark-gray-04;
+
+$header-bg: $dark-gray-03;
+$footer-bg: $dark-gray-03;
+
+$footer-claim-bg: $dark-gray-02;
+$text-color: $dark-gray-02;
+$main-bg: $dark-gray-02;
+$button-outline-not-hover-bg: $dark-gray-02;
+$button-outline-border-color: $dark-gray-02;
+$button-outline-color: $dark-gray-02;
+$productBox-line-border-color: $dark-gray-02;
+
+$productBox-sale-bg: $dark-gray-01;
+$featureBox-content-color: $dark-gray-01;
+$form-border-color: $dark-gray-01;
+$productBox-stars-a: $dark-gray-01;
+$newFerniture-menu-a:$dark-gray-01; 
+
+$primary: $intensiveOrange;
+
+$main-color: $white;
+$button-outline-not-hover-color: $white;
+$iconWrapper-hover-color: $white;
+$iconWrapper-before-bg: $white;
+$root-bg: $white;
+$productBox-sale-color: $white;
+$newFurniture-ul-bg: $white;
+$cartBox-color:$white;
+$menuWrapper-color: $white;
+$menuWrapper-a-hover: $white;
+$menuBar-root-bg: $white;
+$menuBar-border: $white;
+$menuBar-hover-active-a: $white;
+$topBar-a: $white;
