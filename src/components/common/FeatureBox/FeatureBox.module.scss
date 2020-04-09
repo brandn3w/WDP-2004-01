@@ -52,7 +52,7 @@
     letter-spacing: 1px;
     font-weight: 300;
 
-    h5 {
+    a {
       font-weight: 600;
       margin: 0;
     }
@@ -61,7 +61,7 @@
     }
   }
 
-  &.active {
+  &:hover {
     .iconWrapper {
       color: #ffffff;
 
