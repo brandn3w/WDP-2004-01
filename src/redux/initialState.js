@@ -227,6 +227,10 @@ const initialState = {
   cart: {
     products: [],
   },
+  search: {
+    category: {},
+    searchPhrase: '',
+  },
 };
 
 export default initialState;
