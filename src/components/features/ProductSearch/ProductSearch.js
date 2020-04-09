@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,12 +46,10 @@ const ProductSearch = ({ categories, children, setSearch }) => {
       <div className={styles.searchField}>
         <input ref={searchPhraseRef} placeholder='Search products...' type='text' />
         <button
-          onClick={() =>
-            setSearch({
-              category: ulRef.current.attributes.id.value,
-              searchPhrase: searchPhraseRef.current.value,
-            })
-          }
+          onClick={e => {
+            e.preventDefault();
+            setSearch(ulRef.current.attributes.id.value, searchPhraseRef.current.value);
+          }}
         >
           <FontAwesomeIcon className={styles.icon} icon={faSearch} />
         </button>

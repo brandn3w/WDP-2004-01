@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
   categories: getAll(state),
 });
 
-const mapDispatchToProps = (dispatch, props) => ({
+const mapDispatchToProps = dispatch => ({
   setSearch: (category, searchPhrase) =>
     dispatch(
       createActionSetSearch({

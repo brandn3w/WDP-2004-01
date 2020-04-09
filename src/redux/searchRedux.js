@@ -1,3 +1,5 @@
+import { withRouter } from 'react-router-dom';
+
 /* selectors */
 export const getSearch = ({ search }) => search;
 
@@ -15,10 +17,7 @@ export const createActionSetSearch = payload => ({ payload, type: SET_SEARCH });
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case SET_SEARCH: {
-      return {
-        ...statePart,
-        search: action.payload,
-      };
+      return { ...action.payload };
     }
     default:
       return statePart;
