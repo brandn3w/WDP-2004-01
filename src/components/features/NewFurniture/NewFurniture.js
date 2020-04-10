@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
 
 class NewFurniture extends React.Component {
   state = {
@@ -66,13 +67,26 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
-          </div>
+          <SwipeWrapper
+            leftAction={() =>
+              this.handlePageChange(
+                activePage + 1 < pagesCount ? activePage + 1 : activePage
+              )
+            }
+            rightAction={() =>
+              this.handlePageChange(activePage > 0 ? activePage - 1 : 0)
+            }
+          >
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox {...item} />
+                  </div>
+                ))}
+            </div>
+          </SwipeWrapper>
         </div>
       </div>
     );
