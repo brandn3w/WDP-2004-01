@@ -48,16 +48,28 @@
             text-decoration: none;
             font-size: 18px;
             display: block;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid $primary;
+              transition: $transition;
+              opacity: 0;
+            }
 
-            &.active,
+            @extend %btn-hover-base;
             &:hover {
               &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $primary;
+                opacity: 1;
+                bottom: -9px;
+              }
+            }
+            &.active,         
+            &:hover {
+              &::before {
+                opacity: 1;
               }
             }
           }
@@ -89,10 +101,7 @@
             background-color: #e1e1e1;
             font-size: 0;
 
-            &.active,
-            &:hover {
-              background-color: $primary;
-            }
+            @include btn-hover;
           }
         }
       }

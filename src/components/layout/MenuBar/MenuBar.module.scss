@@ -36,12 +36,7 @@
       font-weight: 500;
       letter-spacing: 1px;
 
-      &:hover,
-      &.active {
-        background-color: $primary;
-        color: #ffffff;
-        border-color: $primary;
-      }
+      @include btn-hover($border-color: $primary);
 
       &.active {
         border-color: $text-color;
