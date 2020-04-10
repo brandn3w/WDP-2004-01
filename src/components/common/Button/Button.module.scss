@@ -1,7 +1,6 @@
 @import "../../../styles/settings.scss";
 
-// .root {
-// }
+
 
 .main {
   background-color: #2a2a2a;
@@ -24,7 +23,10 @@
   line-height: 24px;
   padding: 5px 10px;
   font-weight: 400;
+  
+ 
 }
+
 
 .outline {
   display: inline-block;
@@ -38,4 +40,8 @@
     background-color: #2a2a2a;
     color: #ffffff;
   }
+}
+
+.button.noHover{
+  background-color: greenyellow;
 }
