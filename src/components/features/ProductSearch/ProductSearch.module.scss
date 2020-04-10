@@ -7,6 +7,7 @@
   color: $text-color;
 
   .category {
+    width: 220px;
     border-right: 1px solid $form-border-color;
     display: flex;
     align-items: center;
@@ -25,11 +26,12 @@
       z-index: 0;
     }
 
-    select {
+    .select {
+      width: 100%;
       -webkit-appearance: none;
       border: 0;
       background-color: transparent;
-      padding: 5px 30px 5px 35px;
+      padding: 20px 30px 5px 35px;
       position: relative;
       z-index: 1;
       font-size: 14px;
@@ -46,6 +48,58 @@
       .icon:first-child {
         color: $text-color;
       }
+    }
+    
+    .optionsWrapper {
+      position: absolute;
+      left: 0;
+      top: 54px;
+      width: 100%;
+      overflow: hidden;
+      max-height: 0;
+    }
+    
+    &:hover .optionsWrapper {
+      max-height: unset;
+    }
+
+    .options {
+      width:100%;
+      position: relative;
+      transform: translateY(-100%);
+      transition: 0.5s;
+      background-color: $main-bg;
+      border: 1px solid $form-border-color;
+      padding: 0;
+    }
+
+    .option {
+      position: relative;
+      padding: 10px 0 10px 15px;
+      list-style-type: none;
+    }
+
+    .option:hover {
+      background-color: $primary;
+      color: $text-color-light;
+    }
+
+    .option:hover::after {
+      content: "";
+      height: 100%;
+      width: 4px;
+      background-color: $header-topbar-bg;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .selectPlaceholder {
+      list-style-type: none;
+    }
+
+    &:hover .options {
+      transform: translateY(0);
     }
   }
 
