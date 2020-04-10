@@ -87,3 +87,11 @@
     align-items: center;
   }
 }
+
+.price {
+  display: flex;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+}
