@@ -12,3 +12,16 @@ export default function reducer(statePart = [], action = {}) {
       return statePart;
   }
 }
+
+export const UpdateButtons = (products, action) => {
+  switch (action.type) {
+    case 'TOGGLE_FAVORITE':
+      return !products.favorite;
+
+    case 'TOGGLE_ADDTOCOMPARE':
+      return !products.addToCompare;
+
+    default:
+      return products;
+  }
+};
