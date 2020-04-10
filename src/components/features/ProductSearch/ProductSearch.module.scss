@@ -5,6 +5,7 @@
   display: inline-flex;
   height: 45px;
   color: $text-color;
+  transition: $transition;
 
   .category {
     width: 220px;
@@ -77,6 +78,7 @@
       position: relative;
       padding: 10px 0 10px 15px;
       list-style-type: none;
+      transition: $transition;
     }
 
     .option:hover {
