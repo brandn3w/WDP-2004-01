@@ -43,7 +43,7 @@
   .photo:hover .buttons {  
     top: 80%;
   }
-
+}
   .content {
     text-align: center;
     padding: 20px;
@@ -86,8 +86,8 @@
     align-items: center;
   
   }
-}
 
-.photo:hover .noHover {
-  background-color: greenyellow;
-}
+  .photo:hover .noHover {    
+    background-color: $primary;
+  }
+
