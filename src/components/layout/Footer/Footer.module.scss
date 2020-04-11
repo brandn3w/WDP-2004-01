@@ -7,7 +7,7 @@
 
     .menuWrapper {
       h6 {
-        color: $menuWrapper-color;
+        color: $footer-menu-wrapper;
         text-transform: uppercase;
         margin: 0 0 1rem 0;
       }
@@ -23,7 +23,7 @@
             color: $footer-a-p;
 
             &:hover {
-              color: $menuWrapper-a-hover;
+              color: $footer-a-hover;
             }
           }
         }
@@ -42,7 +42,7 @@
   }
 
   .bottomBar {
-    background-color: $footer-claim-bg;
+    background-color: $footer-claim;
 
     :global(.container) > :global(.row) {
       height: 95px;

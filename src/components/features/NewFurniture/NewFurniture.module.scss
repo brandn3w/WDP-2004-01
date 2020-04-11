@@ -6,7 +6,7 @@
     position: relative;
 
     :global(.row) > * {
-      border-bottom: 4px solid $panelBar-row-border-bottom-c;
+      border-bottom: 4px solid $panel-bar-row;
     }
 
     .heading {
@@ -43,21 +43,33 @@
           font-weight: 600;
 
           a {
-            color: $newFerniture-menu-a;
+            color: $new-ferniture-menu;
             position: relative;
             text-decoration: none;
             font-size: 18px;
             display: block;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: -4px;
+              left: 0;
+              width: 100%;
+              border-bottom: 4px solid $primary;
+              transition: $transition;
+              opacity: 0;
+            }
 
-            &.active,
+            @extend %btn-hover-base;
             &:hover {
               &::before {
-                content: "";
-                position: absolute;
-                bottom: -4px;
-                left: 0;
-                width: 100%;
-                border-bottom: 4px solid $primary;
+                opacity: 1;
+                bottom: -9px;
+              }
+            }
+            &.active,         
+            &:hover {
+              &::before {
+                opacity: 1;
               }
             }
           }
@@ -74,7 +86,7 @@
         margin: 0;
         padding: 0 0 0 1rem;
         list-style: none;
-        background-color: $newFurniture-ul-bg;
+        background-color: $new-furniture-ul;
         transform: translateY(15px);
 
         li {
@@ -86,13 +98,10 @@
             width: 13px;
             height: 13px;
             border-radius: 6px;
-            background-color: $newFurniture-a-bg;
+            background-color: $new-furniture-a;
             font-size: 0;
 
-            &.active,
-            &:hover {
-              background-color: $primary;
-            }
+            @include btn-hover;
           }
         }
       }

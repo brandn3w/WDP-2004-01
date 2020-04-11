@@ -12,10 +12,11 @@
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: $button-outline-not-hover-color !important;
+    color: $button-outline-hover-color !important;
     background-color: $primary;
     text-decoration: none;
   }
+  @include btn-hover;
 }
 
 .small {
@@ -29,13 +30,14 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid $button-outline-border-color;
+  border: 1px solid $button-outline-border;
   color: $button-outline-color;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: $button-outline-not-hover-bg;
-    color: $button-outline-not-hover-color;
+    background-color: $button-outline-hover;
+    color: $button-outline-hover-color;
   }
+  @include btn-hover($text-color-light, $text-color);
 }

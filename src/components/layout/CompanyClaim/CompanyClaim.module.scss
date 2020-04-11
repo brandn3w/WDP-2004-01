@@ -12,7 +12,7 @@
       margin: 0;
       font-size: 17px;
       line-height: 42px;
-      color: $companyClaim-phone;
+      color: $company-claim-phone;
       font-weight: 500;
 
       .icon {
@@ -29,7 +29,7 @@
     .cartBox {
       display: inline-block;
       position: relative;
-      color: $cartBox-color;
+      color: $company-claim-cart-box;
 
       .cartIcon {
         background-color: $primary;
@@ -53,14 +53,17 @@
         background-color: $header-bg;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         font-size: 14px;
-        color: $companyClaim-cartCounter;
+        color: $company-claim-cart;
         position: absolute;
         top: 50%;
         right: 0;
         transform: translate(50%, -50%);
+        padding-left: 5px;
       }
+
+      @extend %btn-hover-base;
 
       &:hover {
         .cartIcon {
