@@ -11,18 +11,25 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ name, price, promo, stars, image, favorite, addToCompare }) => {
-  return (
-    <div className={styles.root}>
-      <div className={styles.photo}>
-        <img src={image} alt={name} className={styles.image} />
-        {promo && <div className={styles.sale}>{promo}</div>}
-        <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
-          <Button variant='small'>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-          </Button>
-        </div>
+const ProductBox = ({
+  name,
+  price,
+  oldPrice,
+  promo,
+  stars,
+  image,
+  favorite,
+  addToCompare,
+}) => (
+  <div className={styles.root}>
+    <div className={styles.photo}>
+      <img src={image} alt={name} className={styles.image} />
+      {promo && <div className={styles.sale}>{promo}</div>}
+      <div className={styles.buttons}>
+        <Button variant='small'>Quick View</Button>
+        <Button variant='small'>
+          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+        </Button>
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
@@ -53,10 +60,20 @@ const ProductBox = ({ name, price, promo, stars, image, favorite, addToCompare }
             $ {price}
           </Button>
         </div>
+        <div className={styles.price}>
+          {!oldPrice ? null : (
+            <Button noHover variant='outline'>
+              <div className={styles.oldPrice}>$ {oldPrice}</div>
+            </Button>
+          )}
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 ProductBox.propTypes = {
   addToCompare: PropTypes.bool,
@@ -64,6 +81,7 @@ ProductBox.propTypes = {
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
+  oldPrice: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
   image: PropTypes.string,

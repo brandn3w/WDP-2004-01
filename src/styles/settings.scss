@@ -2,6 +2,7 @@ $base-padding: 24px;
 
 $header-topbar-bg: #434343;
 $header-bg: #363636;
+$main-bg: #ffffff;
 
 $footer-claim-bg: #2a2a2a;
 $footer-bg: #363636;
@@ -9,5 +10,32 @@ $footer-bg: #363636;
 $primary: #d58e32;
 
 $text-color: #2a2a2a;
+$text-color-light: #ffffff;
 
 $form-border-color: #292929;
+
+$transition: all 0.25s, background-color 0.25s, color 0.25s;
+
+%btn-hover-base {
+  transition: $transition;
+  position: relative;
+  top:0;
+  &:not(.noHover):hover {
+    top: -5px;
+  }
+}
+
+@mixin btn-hover(
+  $hover-color: $text-color-light, 
+  $hover-bg-color: $primary,
+  $border-color: currentcolor, 
+  ) {
+  @extend %btn-hover-base;
+  &.active,
+  &:not(.noHover):hover {
+    border-color: $border-color;
+    text-decoration: none;
+    background-color: $hover-bg-color;
+    color: $hover-color;
+  }
+}  
