@@ -1,0 +1,43 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+
+  .iconWrapper {
+    min-height: 70px;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      font-size: 20px;
+    }
+  }
+
+  .description {
+    padding: 0 20px 20px 20px;
+  }
+
+  .client {
+    display: flex;
+
+    img {
+      width: 100px;
+      height: 100px;
+      padding: 5px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .client_description {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}
