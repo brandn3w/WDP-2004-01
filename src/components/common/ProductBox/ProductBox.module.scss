@@ -1,10 +1,11 @@
 @import "../../../styles/settings.scss";
+@import "../Button/Button.module.scss";
 
 .root {
   background-color: #ffffff;
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
-
+  cursor: pointer;
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
@@ -28,23 +29,26 @@
       padding: 30px 15px 5px 15px;
     }
 
-    .image {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .buttons {
-      position: relative;
       display: flex;
       justify-content: space-between;
+      position: absolute;
+      top: - 50%;
+      transform: translate(5%, -50%);
+      transition: all 0.3s ease-in-out 0s;    
+      overflow: hidden;
     }
   }
 
+  .photo:hover .buttons {  
+    top: 80%;
+  }
+
+  .photo:hover .noHover {    
+    background-color: $primary;
+  }
+
+}
   .content {
     text-align: center;
     padding: 20px;
@@ -85,13 +89,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  
   }
-}
 
-.price {
-  display: flex;
-}
+  .photo:hover .noHover {    
+    background-color: $primary;
+  }
 
-.oldPrice {
-  text-decoration: line-through;
-}
