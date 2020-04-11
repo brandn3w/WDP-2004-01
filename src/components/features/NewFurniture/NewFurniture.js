@@ -29,10 +29,6 @@ class NewFurniture extends React.Component {
     }, 250);
   }
 
-  componentDidUpdate() {
-    this.rowRef.current.classList = 'row fade show';
-  }
-
   render() {
     const { categories, products } = this.props;
     const { activeCategory, activePage } = this.state;
