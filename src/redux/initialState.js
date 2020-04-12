@@ -472,6 +472,17 @@ const initialState = {
     category: {},
     searchPhrase: '',
   },
+  feedbacks: [
+    {
+      id: 1,
+      name: 'John Smith',
+      clientType: 'Furniture client',
+      image:
+        'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
+    },
+  ],
 };
 
 export default initialState;
