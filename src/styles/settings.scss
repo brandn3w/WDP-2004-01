@@ -1,18 +1,85 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+
 $main-bg: #ffffff;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+//all colors, all defined variables are used. 01- the darkest hue
+$dark-gray: #434343;
+$darker-dark-gray: #363636;
+$super-dark-gray: #2a2a2a;
+$mega-dark-gray: #292929;
 
-$primary: #d58e32;
+$shadow-gray: rgba(1, 2, 2, 0.2);
+ 
+$intensive-orange: #d58e32;
 
-$text-color: #2a2a2a;
-$text-color-light: #ffffff;
+$white: #ffffff;
 
-$form-border-color: #292929;
+$white-gray: #f4f5f7;
+$almost-white-gray: #e2e2e2;
+$mega-light-gray: #e1e1e1;
+$super-light-gray:#e0e3ed;
+$lighter-light-gray: rgb(216, 216, 216);
+$light-gray: #b6b6b6;
+$gray: rgb(169, 169, 169);
+
+
+// variable color assigned to variable by usage
+$company-claim-cart: $super-light-gray;
+$company-claim-cart-box:$white;
+$company-claim-phone: $lighter-light-gray;
+
+$footer-claim: $super-dark-gray;
+$footer-bg: $darker-dark-gray;
+$footer-a-p: $gray;
+$footer-menu-wrapper: $white;
+$footer-a-hover: $white;
+
+$new-furniture-a: $mega-light-gray;
+$new-ferniture-menu:$mega-dark-gray;
+$new-furniture-ul: $white;
+
+$icon-wrapper-before: $light-gray;
+$icon-wrapper-after: $light-gray;
+$icon-wrapper-hover: $white;
+$icon-wrapper-before: $white;
+
+$button-outline-hover: $super-dark-gray;
+$button-outline-border: $super-dark-gray;
+$button-outline-color: $super-dark-gray;
+$button-outline-hover-color: $white; 
+
+$product-box-line: $super-dark-gray;
+$product-box-stars: $mega-dark-gray;
+$product-box-sale: $white;
+$product-box-root: $mega-light-gray;
+$product-box-photo: $white-gray;
+$product-box-sale: $mega-dark-gray;
+
+$menu-bar-root: $white;
+$menu-bar-a: $white;
+$menu-bar-a-hover-active: $white;
+$menu-bar-shadow: $shadow-gray;
+
+$main-bg: $white;
+$main-color: $white;
+
+$root-bg: $white;
+$root-border-color: $light-gray;
+
+$text-color-light: $white;
+
+$top-bar-root: $dark-gray;
+$top-bar-a: $white;
+
+$panel-bar-row: $almost-white-gray;
+$product-search-option: $dark-gray;
+$header-bg: $darker-dark-gray;
+$text-color: $super-dark-gray;
+$feature-box-content: $mega-dark-gray;
+$form-border-color: $mega-dark-gray;
+$primary: $intensive-orange;
+//-----------end--------------------------------
 
 $transition: all 0.25s, background-color 0.25s, color 0.25s;
 
@@ -24,6 +91,7 @@ $transition: all 0.25s, background-color 0.25s, color 0.25s;
     top: -5px;
   }
 }
+
 
 @mixin btn-hover(
   $hover-color: $text-color-light, 
