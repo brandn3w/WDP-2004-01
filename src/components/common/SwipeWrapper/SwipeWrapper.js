@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Swipeable from 'react-swipeable';
+import { Swipeable } from 'react-swipeable';
 
 const SwipeWrapper = ({ children, leftAction, rightAction }) => (
   <Swipeable onSwipedLeft={leftAction} onSwipedRight={rightAction}>
