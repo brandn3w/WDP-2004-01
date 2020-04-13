@@ -16,7 +16,7 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      favorite: true,
+      favorite: false,
       addToCompare: false,
       image:
         'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
@@ -31,7 +31,7 @@ const initialState = {
       promo: 'sale',
       newFurniture: true,
       favorite: false,
-      addToCompare: true,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -43,8 +43,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
-      favorite: true,
-      addToCompare: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -333,6 +333,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -344,6 +346,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/1701100/pexels-photo-1701100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -355,6 +359,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/769585/pexels-photo-769585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -366,6 +372,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/106839/pexels-photo-106839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -377,6 +385,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/106839/pexels-photo-106839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -388,6 +398,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -399,6 +411,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?cs=srgb&dl=apartament-architektura-dekoracja-wnetrz-dywan-276583.jpg&fm=jpg',
     },
@@ -410,6 +424,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -421,6 +437,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -432,6 +450,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/631411/pexels-photo-631411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -443,6 +463,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2451264/pexels-photo-2451264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -454,6 +476,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -465,6 +489,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -476,6 +502,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -487,6 +515,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -498,6 +528,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -509,6 +541,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      favorite: false,
+      addToCompare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },

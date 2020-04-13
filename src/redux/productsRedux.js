@@ -17,9 +17,15 @@ export const toggleAddToCompare = payload => ({ payload, type: TOGGLE_ADDTOCOMPA
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case 'TOGGLE_FAVORITE':
-      return {};
+      return {
+        statePart,
+        favorite: !statePart.favorite,
+      };
     case 'TOGGLE_ADDTOCOMPARE':
-      return {};
+      return {
+        statePart,
+        addToCompare: !statePart.addToCompare,
+      };
     default:
       return statePart;
   }

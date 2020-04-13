@@ -18,8 +18,9 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  favorite,
+  favorit,
   addToCompare,
+  toggleFavorite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -48,7 +49,7 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant={favorite ? 'active' : 'outline'}>
+          <Button onClick={toggleFavorite} variant={favorit ? 'active' : 'outline'}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button variant={addToCompare ? 'active' : 'outline'}>
@@ -76,8 +77,9 @@ const ProductBox = ({
 );
 
 ProductBox.propTypes = {
+  toggleFavorite: PropTypes.func,
+  favorit: PropTypes.bool,
   addToCompare: PropTypes.bool,
-  favorite: PropTypes.bool,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
