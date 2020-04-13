@@ -4,7 +4,7 @@
 // }
 
 .main {
-  background-color: $main-bg;
+  background-color: $mega-dark-gray;
   color: $main-color;
   font-size: 16px;
   line-height: 24px;
@@ -40,4 +40,5 @@
     color: $button-outline-hover-color;
   }
   @include btn-hover($text-color-light, $text-color);
+
 }
