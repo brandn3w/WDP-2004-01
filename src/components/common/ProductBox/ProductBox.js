@@ -18,9 +18,11 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  favorit,
+  favorite,
   addToCompare,
-  toggleFavorites,
+  id,
+  toggleFavorite,
+  toggleCompare,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -49,11 +51,16 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          {console.log(toggleFavorites)}
-          <Button variant={favorit ? 'active' : 'outline'}>
+          <Button
+            onClick={() => toggleFavorite({ id })}
+            variant={favorite ? 'active' : 'outline'}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant={addToCompare ? 'active' : 'outline'}>
+          <Button
+            onClick={() => toggleCompare({ id })}
+            variant={addToCompare ? 'active' : 'outline'}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -78,9 +85,10 @@ const ProductBox = ({
 );
 
 ProductBox.propTypes = {
-  props: PropTypes.node,
-  toggleFavorites: PropTypes.func,
-  favorit: PropTypes.bool,
+  id: PropTypes.node,
+  toggleCompare: PropTypes.func,
+  toggleFavorite: PropTypes.func,
+  favorite: PropTypes.bool,
   addToCompare: PropTypes.bool,
   children: PropTypes.node,
   name: PropTypes.string,

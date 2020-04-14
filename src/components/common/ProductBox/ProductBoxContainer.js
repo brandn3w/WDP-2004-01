@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
-import { toggleFavorite } from '../../../redux/productsRedux';
+import {
+  createAction_toggleFavorite,
+  createAction_toggleCompare,
+  getAll,
+} from '../../../redux/productsRedux';
 import ProductBox from './ProductBox';
 
-export const getProductsForButtons = ({ buttons }, productsId) =>
-  buttons.filter(button => button.productsId === productsId);
-
 const mapStateToProps = state => ({
-  favorite: state.products.favorite,
+  products: getAll(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  togglefavorites: () => dispatch(toggleFavorite()),
+  toggleCompare: productId => dispatch(createAction_toggleCompare(productId)),
+  toggleFavorite: productId => dispatch(createAction_toggleFavorite(productId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductBox);
