@@ -4,9 +4,13 @@ import ProductBox from './ProductBox';
 
 export const getProductsForButtons = ({ buttons }, productsId) =>
   buttons.filter(button => button.productsId === productsId);
-const mapStateToProps = state => ({});
+
+const mapStateToProps = state => ({
+  favorite: state.products.favorite,
+});
+
 const mapDispatchToProps = dispatch => ({
-  togglefavorite: () => dispatch(toggleFavorite),
+  togglefavorites: () => dispatch(toggleFavorite()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductBox);
