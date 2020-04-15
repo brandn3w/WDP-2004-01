@@ -14,6 +14,7 @@ const initialState = {
       price: 30,
       oldPrice: 35,
       stars: 2,
+      customerStars: 4,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -26,6 +27,7 @@ const initialState = {
       price: 30,
       oldPrice: 35,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -37,6 +39,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -48,6 +51,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -60,6 +64,7 @@ const initialState = {
       price: 30,
       oldPrice: 42,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -71,6 +76,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -82,6 +88,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -94,6 +101,7 @@ const initialState = {
       price: 30,
       oldPrice: 38,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -106,6 +114,7 @@ const initialState = {
       price: 30,
       oldPrice: 32,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -117,6 +126,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -128,6 +138,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -139,6 +150,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -150,6 +162,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -162,6 +175,7 @@ const initialState = {
       price: 30,
       oldPrice: 40,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -173,6 +187,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -184,6 +199,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -195,6 +211,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -206,6 +223,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -217,6 +235,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -228,6 +247,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -239,6 +259,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -250,6 +271,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -261,6 +283,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -272,6 +295,7 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -283,6 +307,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -294,6 +319,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -305,6 +331,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -316,6 +343,7 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -327,6 +355,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -338,6 +367,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -349,6 +379,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -360,6 +391,7 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -371,6 +403,7 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -382,6 +415,7 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -393,6 +427,7 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -404,6 +439,7 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -415,6 +451,7 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -426,6 +463,7 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -437,6 +475,7 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -448,6 +487,7 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -459,6 +499,7 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
       image:
@@ -474,11 +515,29 @@ const initialState = {
   },
   feedbacks: [
     {
-      id: 1,
+      id: 0,
       name: 'John Smith',
       clientType: 'Furniture client',
       image:
         'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
+    },
+    {
+      id: 1,
+      name: 'Kate Morningstar',
+      clientType: 'Shopaholic',
+      image:
+        'https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
+    },
+    {
+      id: 2,
+      name: 'Jon Snow',
+      clientType: 'Just a guy',
+      image:
+        'https://images.pexels.com/photos/35065/homeless-man-color-poverty.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
     },
