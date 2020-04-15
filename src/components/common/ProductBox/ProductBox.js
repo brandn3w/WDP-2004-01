@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import Stars from '../Stars/Stars';
 
 const ProductBox = ({
   name,
@@ -18,8 +15,13 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  favorite,
   addToCompare,
+  countProductToCompare,
+  customerStars,
+  setCustomerStars,
+  id,
+  favorite,
+  toggleFavorite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -31,53 +33,60 @@ const ProductBox = ({
           <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
         </Button>
       </div>
-      <div className={styles.content}>
-        <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+    </div>
+    <div className={styles.content}>
+      <h5>{name}</h5>
+      <Stars
+        stars={stars}
+        customerStars={customerStars}
+        setCustomerStars={setCustomerStars}
+        id={id}
+      />
+    </div>
+    <div className={styles.line}></div>
+    <div className={styles.actions}>
+      <div className={styles.outlines}>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            toggleFavorite({ id });
+          }}
+          variant={favorite ? 'active' : 'outline'}
+        >
+          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+        </Button>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            if (countProductToCompare() < 4) {
+              addToCompare(id);
+            }
+          }}
+          variant='outline'
+        >
+          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+        </Button>
       </div>
-      <div className={styles.line}></div>
-      <div className={styles.actions}>
-        <div className={styles.outlines}>
-          <Button variant={favorite ? 'active' : 'outline'}>
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+      <div className={styles.price}>
+        {!oldPrice ? null : (
+          <Button noHover variant='outline'>
+            <div className={styles.oldPrice}>$ {oldPrice}</div>
           </Button>
-          <Button variant={addToCompare ? 'active' : 'outline'}>
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
-        </div>
-        <div className={styles.price}>
-          <Button noHover variant='small'>
-            $ {price}
-          </Button>
-        </div>
-        <div className={styles.price}>
-          {!oldPrice ? null : (
-            <Button noHover variant='outline'>
-              <div className={styles.oldPrice}>$ {oldPrice}</div>
-            </Button>
-          )}
-          <Button noHover variant='small'>
-            $ {price}
-          </Button>
-        </div>
+        )}
+        <Button noHover variant='small'>
+          $ {price}
+        </Button>
       </div>
     </div>
   </div>
 );
 
 ProductBox.propTypes = {
-  addToCompare: PropTypes.bool,
+  id: PropTypes.string,
+  toggleCompare: PropTypes.func,
+  toggleFavorite: PropTypes.func,
   favorite: PropTypes.bool,
+  compare: PropTypes.bool,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
@@ -85,6 +94,10 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   image: PropTypes.string,
+  countProductToCompare: PropTypes.func,
+  addToCompare: PropTypes.func,
+  customerStars: PropTypes.number,
+  setCustomerStars: PropTypes.func,
 };
 
 export default ProductBox;
