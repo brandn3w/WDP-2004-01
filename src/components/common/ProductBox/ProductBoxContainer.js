@@ -1,17 +1,20 @@
 import { connect } from 'react-redux';
-import {
-  createAction_toggleFavorite,
-  createAction_toggleCompare,
-  getAll,
-} from '../../../redux/productsRedux';
+
 import ProductBox from './ProductBox';
+import {
+  getAll,
+  createAction_toggleFavorite,
+  getCountProductToCompare,
+  addToCompare,
+} from '../../../redux/productsRedux';
 
 const mapStateToProps = state => ({
   products: getAll(state),
+  countProductToCompare: () => getCountProductToCompare(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  toggleCompare: productId => dispatch(createAction_toggleCompare(productId)),
+  addToCompare: id => dispatch(addToCompare(id)),
   toggleFavorite: productId => dispatch(createAction_toggleFavorite(productId)),
 });
 

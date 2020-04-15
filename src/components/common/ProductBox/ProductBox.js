@@ -15,13 +15,13 @@ const ProductBox = ({
   promo,
   stars,
   image,
-  favorite,
-  compare,
-  id,
-  toggleFavorite,
-  toggleCompare,
+  addToCompare,
+  countProductToCompare,
   customerStars,
   setCustomerStars,
+  id,
+  favorite,
+  toggleFavorite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -47,14 +47,22 @@ const ProductBox = ({
     <div className={styles.actions}>
       <div className={styles.outlines}>
         <Button
-          onClick={() => toggleFavorite({ id })}
+          onClick={e => {
+            e.preventDefault();
+            toggleFavorite({ id });
+          }}
           variant={favorite ? 'active' : 'outline'}
         >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button
-          onClick={() => toggleCompare({ id })}
-          variant={compare ? 'active' : 'outline'}
+          onClick={e => {
+            e.preventDefault();
+            if (countProductToCompare() < 4) {
+              addToCompare(id);
+            }
+          }}
+          variant='outline'
         >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
@@ -86,6 +94,8 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   image: PropTypes.string,
+  countProductToCompare: PropTypes.func,
+  addToCompare: PropTypes.func,
   customerStars: PropTypes.number,
   setCustomerStars: PropTypes.func,
 };
