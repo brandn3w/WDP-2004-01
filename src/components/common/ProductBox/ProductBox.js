@@ -16,6 +16,8 @@ const ProductBox = ({
   promo,
   stars,
   image,
+  addToCompare,
+  countProductToCompare,
   customerStars,
   setCustomerStars,
 }) => (
@@ -45,7 +47,15 @@ const ProductBox = ({
         <Button variant='outline'>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            if (countProductToCompare() < 4) {
+              addToCompare(id);
+            }
+          }}
+          variant='outline'
+        >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -72,6 +82,8 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   image: PropTypes.string,
+  countProductToCompare: PropTypes.func,
+  addToCompare: PropTypes.func,
   customerStars: PropTypes.number,
   setCustomerStars: PropTypes.func,
 };
