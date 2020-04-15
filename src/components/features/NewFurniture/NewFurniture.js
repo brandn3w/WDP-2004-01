@@ -30,12 +30,15 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products, setCustomerStars } = this.props;
+    const { categories, products, setCustomerStars, windowMode } = this.props;
     const { activeCategory, activePage } = this.state;
-
+    const productCount = {
+      desktops: 8,
+      tablets: 3,
+      phones: 2,
+    };
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
-
+    const pagesCount = Math.ceil(categoryProducts.length / productCount[windowMode]);
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
@@ -93,7 +96,10 @@ class NewFurniture extends React.Component {
           >
             <div ref={this.rowRef} className='row fade show'>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(
+                  activePage * productCount[windowMode],
+                  (activePage + 1) * productCount[windowMode]
+                )
                 .map(item => (
                   <div key={item.id} className='col-3'>
                     <ProductBox setCustomerStars={setCustomerStars} {...item} />
@@ -128,6 +134,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  windowMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
