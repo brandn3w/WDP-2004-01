@@ -1,5 +1,5 @@
 @import "../../../styles/settings.scss";
-@import "../Button/Button.module.scss";
+
 
 .root {
   background-color: $root-bg;
@@ -18,8 +18,11 @@
     overflow: hidden;
     align-items: flex-end;
 
+
+
     img {
-      width: 100%;
+      width: 300px;
+      height: 300px;
       object-fit: cover;
     }
 
