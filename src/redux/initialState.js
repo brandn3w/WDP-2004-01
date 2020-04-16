@@ -624,6 +624,11 @@ const initialState = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
     },
   ],
+  window: {
+    mode: 'desktops',
+    width: 0,
+    height: 0,
+  },
 };
 
 export default initialState;
