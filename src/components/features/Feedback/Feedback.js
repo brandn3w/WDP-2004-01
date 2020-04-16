@@ -6,7 +6,7 @@ import FeedbackBox from '../../common/FeedbackBox/FeedbackBox';
 class Feedback extends React.Component {
   render() {
     const { feedbacks } = this.props;
-
+    console.log(feedbacks);
     return (
       <div className={styles.root}>
         <div className='container'>
