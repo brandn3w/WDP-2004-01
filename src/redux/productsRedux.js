@@ -27,11 +27,6 @@ export const createAction_toggleFavorite = payload => ({
   payload,
   type: TOGGLE_FAVORITE,
 });
-export const createAction_toggleCompare = payload => ({
-  payload,
-  type: TOGGLE_COMPARE,
-});
-
 export const addToCompare = payload => ({ payload, type: ADD_TO_COMPARE });
 export const removeFromCompare = payload => ({ payload, type: REMOVE_FROM_COMPARE });
 export const setCustomerStars = payload => ({ payload, type: SET_CUSTOMER_STARS });

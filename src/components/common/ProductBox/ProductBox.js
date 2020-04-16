@@ -20,7 +20,6 @@ const ProductBox = ({
   customerStars,
   setCustomerStars,
   id,
-  compare,
   favorite,
   toggleFavorite,
 }) => (
