@@ -6,6 +6,12 @@ const initialState = {
     { id: 'table', name: 'Table' },
     { id: 'dining', name: 'Dining' },
   ],
+  galleryTabs: [
+    { id: 'featured', name: 'Featured' },
+    { id: 'topselller', name: 'Top seller', active: 'true' },
+    { id: 'saleoff', name: 'Sale off' },
+    { id: 'toprated', name: 'Top rated' },
+  ],
   products: [
     {
       id: 'aenean-ru-bristique-1',
