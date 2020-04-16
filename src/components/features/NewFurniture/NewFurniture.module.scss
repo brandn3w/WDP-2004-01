@@ -1,6 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
+
+
   .panelBar {
     margin-bottom: 30px;
     position: relative;
@@ -126,6 +128,8 @@
 
   body {
     display: inline-block;
+    width:80%;
+ 
   }
 
 }
