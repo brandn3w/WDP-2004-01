@@ -16,11 +16,17 @@ const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
+export const TOGGLE_FAVORITE = createActionName('TOGGLE_FAVORITE');
+export const TOGGLE_COMPARE = createActionName('TOGGLE_COMPARE');
 const ADD_TO_COMPARE = createActionName('ADD_TO_COMPARE');
 const REMOVE_FROM_COMPARE = createActionName('REMOVE_FROM_COMPARE');
 const SET_CUSTOMER_STARS = createActionName('SET_CUSTOMER_STARS');
 
-/* action creators */
+/* action creator */
+export const createAction_toggleFavorite = payload => ({
+  payload,
+  type: TOGGLE_FAVORITE,
+});
 export const addToCompare = payload => ({ payload, type: ADD_TO_COMPARE });
 export const removeFromCompare = payload => ({ payload, type: REMOVE_FROM_COMPARE });
 export const setCustomerStars = payload => ({ payload, type: SET_CUSTOMER_STARS });
@@ -61,6 +67,13 @@ export default function reducer(statePart = [], action = {}) {
       }
       return statePart;
     }
+    case TOGGLE_FAVORITE:
+      return statePart.map(product => {
+        if (product.id === action.payload.id) {
+          product.favorite = !product.favorite;
+        }
+        return product;
+      });
     default:
       return statePart;
   }
