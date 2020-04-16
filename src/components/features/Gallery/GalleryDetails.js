@@ -2,13 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import Stars from '../../common/Stars/Stars';
 
-const GalleryDetails = ({ name, stars, price, oldPrice }) => {
-  const starsArray = [1, 2, 3, 4, 5];
-
+const GalleryDetails = ({
+  id,
+  name,
+  stars,
+  price,
+  oldPrice,
+  customerStars,
+  setCustomerStars,
+}) => {
   return (
     <>
       <div className={styles.price}>
@@ -19,27 +23,25 @@ const GalleryDetails = ({ name, stars, price, oldPrice }) => {
       </div>
       <div className={styles.description}>
         <h5>{name}</h5>
-        <div className={styles.stars}>
-          {starsArray.map(i => (
-            <a key={i}>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <Stars
+          stars={stars}
+          customerStars={customerStars}
+          setCustomerStars={setCustomerStars}
+          id={id}
+        />
       </div>
     </>
   );
 };
 
 GalleryDetails.propTypes = {
+  id: PropTypes.string,
   stars: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   oldPrice: PropTypes.number,
+  customerStars: PropTypes.number,
+  setCustomerStars: PropTypes.func,
 };
 
 export default GalleryDetails;

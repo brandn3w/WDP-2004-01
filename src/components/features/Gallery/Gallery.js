@@ -8,7 +8,7 @@ import GalleryStatick from './GalleryStatick';
 
 class Gallery extends React.Component {
   render() {
-    const { products, galleryTabs } = this.props;
+    const { products, galleryTabs, setCustomerStars } = this.props;
 
     return (
       <div className={styles.root}>
@@ -48,10 +48,13 @@ class Gallery extends React.Component {
                     <img src={product.image} alt={product.name} />
                     <GalleryIcons />
                     <GalleryDetails
+                      id={product.id}
                       name={product.name}
                       price={product.price}
                       oldPrice={product.oldPrice}
                       stars={product.stars}
+                      customerStars={product.customerStars}
+                      setCustomerStars={setCustomerStars}
                     />
                   </div>
                 ))}
@@ -92,5 +95,6 @@ class Gallery extends React.Component {
 Gallery.propTypes = {
   products: PropTypes.array,
   galleryTabs: PropTypes.array,
+  setCustomerStars: PropTypes.func,
 };
 export default Gallery;
