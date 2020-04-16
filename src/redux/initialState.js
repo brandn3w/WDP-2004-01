@@ -583,6 +583,24 @@ const initialState = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
     },
   ],
+  promotion: {
+    leftBanner: {
+      title: 'Guest Room',
+      subtitle: 'Sofa',
+      discount: 20,
+    },
+    rightTopBanner: {
+      titleBold: 'Office',
+      title: 'Chair',
+      subtitle: 'collection',
+      price: 200.0,
+    },
+    rightBottomBanner: {
+      titleBold: 'Special',
+      title: 'collection',
+      subtitle: 'Save up 45% of furniture',
+    },
+  },
   window: {
     mode: 'desktops',
     width: 0,
