@@ -12,7 +12,6 @@ const Button = ({
   ...props
 }) => {
   const classes = [];
-
   if (propClassName) classes.push(propClassName);
 
   if (variant) classes.push(styles[variant]);
