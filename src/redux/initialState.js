@@ -14,8 +14,10 @@ const initialState = {
       price: 30,
       oldPrice: 35,
       stars: 2,
+      customerStars: 4,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260',
     },
@@ -26,8 +28,10 @@ const initialState = {
       price: 30,
       oldPrice: 35,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -37,8 +41,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -48,8 +54,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/276534/pexels-photo-276534.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -60,8 +68,10 @@ const initialState = {
       price: 30,
       oldPrice: 42,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/280471/pexels-photo-280471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -71,8 +81,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/945688/pexels-photo-945688.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -82,8 +94,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/269252/pexels-photo-269252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -94,8 +108,10 @@ const initialState = {
       price: 30,
       oldPrice: 38,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1528975/pexels-photo-1528975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -106,8 +122,10 @@ const initialState = {
       price: 30,
       oldPrice: 32,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/945225/pexels-photo-945225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -117,8 +135,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1863622/pexels-photo-1863622.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -128,8 +148,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/769585/pexels-photo-769585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -139,8 +161,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/879821/pexels-photo-879821.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -150,8 +174,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/3097112/pexels-photo-3097112.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -162,8 +188,10 @@ const initialState = {
       price: 30,
       oldPrice: 40,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1390062/pexels-photo-1390062.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -173,8 +201,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/909504/pexels-photo-909504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -184,8 +214,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -195,8 +227,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
     },
@@ -206,8 +240,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1030979/pexels-photo-1030979.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -217,8 +253,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2995012/pexels-photo-2995012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -228,8 +266,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/358572/pexels-photo-358572.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -239,8 +279,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2082092/pexels-photo-2082092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -250,8 +292,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/707579/pexels-photo-707579.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -261,8 +305,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/3356416/pexels-photo-3356416.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -272,8 +318,10 @@ const initialState = {
       category: 'bed',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2179214/pexels-photo-2179214.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -283,8 +331,10 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -294,8 +344,10 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1701100/pexels-photo-1701100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -305,8 +357,10 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/769585/pexels-photo-769585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -316,8 +370,10 @@ const initialState = {
       category: 'chair',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/106839/pexels-photo-106839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -327,8 +383,10 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/106839/pexels-photo-106839.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -338,8 +396,10 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/276566/pexels-photo-276566.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -349,8 +409,10 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg?cs=srgb&dl=apartament-architektura-dekoracja-wnetrz-dywan-276583.jpg&fm=jpg',
     },
@@ -360,8 +422,10 @@ const initialState = {
       category: 'sofa',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -371,8 +435,10 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2092058/pexels-photo-2092058.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -382,8 +448,10 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/631411/pexels-photo-631411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -393,8 +461,10 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2451264/pexels-photo-2451264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -404,8 +474,10 @@ const initialState = {
       category: 'table',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -415,8 +487,10 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -426,8 +500,10 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -437,8 +513,10 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -448,8 +526,10 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -459,8 +539,10 @@ const initialState = {
       category: 'dining',
       price: 30,
       stars: 2,
+      customerStars: 0,
       promo: 'sale',
       newFurniture: true,
+      compare: false,
       image:
         'https://images.pexels.com/photos/2647714/pexels-photo-2647714.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
@@ -474,7 +556,7 @@ const initialState = {
   },
   feedbacks: [
     {
-      id: 1,
+      id: 0,
       name: 'John Smith',
       clientType: 'Furniture client',
       image:
@@ -482,7 +564,30 @@ const initialState = {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
     },
+    {
+      id: 1,
+      name: 'Kate Morningstar',
+      clientType: 'Shopaholic',
+      image:
+        'https://images.pexels.com/photos/1102341/pexels-photo-1102341.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
+    },
+    {
+      id: 2,
+      name: 'Jon Snow',
+      clientType: 'Just a guy',
+      image:
+        'https://images.pexels.com/photos/35065/homeless-man-color-poverty.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
+    },
   ],
+  window: {
+    mode: 'desktops',
+    width: 0,
+    height: 0,
+  },
 };
 
 export default initialState;
