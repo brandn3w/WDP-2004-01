@@ -20,6 +20,7 @@ const ProductBox = ({
   customerStars,
   setCustomerStars,
   id,
+  compare,
   favorite,
   toggleFavorite,
 }) => (
@@ -62,7 +63,7 @@ const ProductBox = ({
               addToCompare(id);
             }
           }}
-          variant='outline'
+          variant={compare ? 'active' : 'outline'}
         >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
