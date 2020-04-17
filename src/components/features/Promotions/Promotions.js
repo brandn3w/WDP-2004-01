@@ -51,9 +51,8 @@ const Promotions = ({ promotions }) => (
           </div>
         </div>
       </div>
-    </div>{' '}
-    {/* container */}
-  </div> //root
+    </div>
+  </div>
 );
 
 Promotions.propTypes = {
