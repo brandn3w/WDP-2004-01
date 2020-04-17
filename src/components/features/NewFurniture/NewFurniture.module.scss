@@ -1,12 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
-
-
   .panelBar {
     margin-bottom: 30px;
     position: relative;
-    text-align: center;
 
     :global(.row) > * {
       border-bottom: 4px solid $panel-bar-row;
@@ -14,7 +11,6 @@
 
     .heading {
       position: relative;
-    
 
       h3 {
         color: $primary;
@@ -78,55 +74,42 @@
             }
           }
         }
+
+   
       }
     }
 
     .dots {
       position: absolute;
       right: 0;
-      top: 2rem;
-      
+      top: 0;
 
       ul {
         margin: 0;
-        padding: 0 0 0 5rem;
-        list-style: none;      
+        padding: 0 0 0 1rem;
+        list-style: none;
         background-color: $new-furniture-ul;
-       
-        
-        
+        transform: translateY(15px);
 
         li {
           display: inline-block;
           margin-left: 0.5rem;
-        
 
-          a {      
+          a {
+            display: block;
             width: 13px;
             height: 13px;
             border-radius: 6px;
             background-color: $new-furniture-a;
-            font-size: 0;          
+            font-size: 0;
+
             @include btn-hover;
-        
           }
         }
+    
       }
+    
     }
-  }
-
-}
-
-@media screen and (min-width: 320px) and (max-width: 599px) {
-
-  html {
-    text-align: center;
-  }
-
-  body {
-    display: inline-block;
-    width:80%;
- 
   }
 
 }

@@ -59,8 +59,8 @@ class NewFurniture extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className={styles.panelBar}>
-            <div className='no-gutters align-items-center column'>
-              <div className={'col-auto' + styles.heading}>
+            <div className='row no-gutters align-items-end'>
+              <div className={'col-auto ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col ' + styles.menu}>
@@ -79,8 +79,8 @@ class NewFurniture extends React.Component {
                   ))}
                 </ul>
               </div>
-              <div className={'row' + styles.dots}>
-                <ul className={'row justify-content-center'}>{dots}</ul>
+              <div className={'col-auto ' + styles.dots}>
+                <ul>{dots}</ul>
               </div>
             </div>
           </div>
@@ -94,15 +94,15 @@ class NewFurniture extends React.Component {
               this.handlePageChange(activePage > 0 ? activePage - 1 : 0)
             }
           >
-            <div ref={this.rowRef} className='row fade show'>
+            <div ref={this.rowRef} className='row fade show '>
               {categoryProducts
                 .slice(
                   activePage * productCount[windowMode],
                   (activePage + 1) * productCount[windowMode]
                 )
                 .map(item => (
-                  <div key={item.id} className='col-12 col-sm-6 col-lg-3'>
-                    <ProductBox {...item} />
+                  <div key={item.id} className='col-lg-3 col-md-6 col-sm-12'>
+                    <ProductBox setCustomerStars={setCustomerStars} {...item} />
                   </div>
                 ))}
             </div>
