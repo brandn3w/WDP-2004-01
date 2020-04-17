@@ -9,7 +9,6 @@ import Button from '../Button/Button';
 import Stars from '../Stars/Stars';
 
 const ProductBox = ({
-  id,
   name,
   price,
   oldPrice,
@@ -20,6 +19,10 @@ const ProductBox = ({
   countProductToCompare,
   customerStars,
   setCustomerStars,
+  id,
+  compare,
+  favorite,
+  toggleFavorite,
 }) => (
   <div className={styles.root}>
     <div className={styles.photo}>
@@ -44,7 +47,13 @@ const ProductBox = ({
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
+        <Button
+          onClick={e => {
+            e.preventDefault();
+            toggleFavorite({ id });
+          }}
+          variant={favorite ? 'active' : 'outline'}
+        >
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
         <Button
@@ -54,7 +63,7 @@ const ProductBox = ({
               addToCompare(id);
             }
           }}
-          variant='outline'
+          variant={compare ? 'active' : 'outline'}
         >
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
@@ -75,6 +84,10 @@ const ProductBox = ({
 
 ProductBox.propTypes = {
   id: PropTypes.string,
+  toggleCompare: PropTypes.func,
+  toggleFavorite: PropTypes.func,
+  favorite: PropTypes.bool,
+  compare: PropTypes.bool,
   children: PropTypes.node,
   name: PropTypes.string,
   price: PropTypes.number,
