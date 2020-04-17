@@ -630,22 +630,28 @@ const initialState = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis finibus lectus cursus sem placerat, quis tempus nibh auctor. Nulla hendrerit finibus blandit. Quisque molestie pharetra felis quis pharetra. Proin convallis accumsan auctor. Orci varius natoque penatibus et magnis dis parturient.',
     },
   ],
-  promotion: {
+  promotions: {
     leftBanner: {
       title: 'Guest Room',
       subtitle: 'Sofa',
       discount: 20,
+      image:
+        'https://images.pexels.com/photos/545034/pexels-photo-545034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     rightTopBanner: {
       titleBold: 'Office',
       title: 'Chair',
       subtitle: 'collection',
       price: 200.0,
+      image:
+        'https://images.pexels.com/photos/509922/pexels-photo-509922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
     rightBottomBanner: {
       titleBold: 'Special',
       title: 'collection',
       subtitle: 'Save up 45% of furniture',
+      image:
+        'https://images.pexels.com/photos/212269/pexels-photo-212269.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
   },
   window: {
