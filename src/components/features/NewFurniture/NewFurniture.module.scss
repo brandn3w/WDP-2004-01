@@ -101,16 +101,13 @@
           margin-left: 0.5rem;
         
 
-          a {
-      
+          a {      
             width: 13px;
             height: 13px;
             border-radius: 6px;
             background-color: $new-furniture-a;
-            font-size: 0;
-          
+            font-size: 0;          
             @include btn-hover;
-
         
           }
         }
