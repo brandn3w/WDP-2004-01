@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
-
+import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
 import GalleryIcons from './GalleryIcons';
 import GalleryDetails from './GalleryDetails';
 import GalleryStatick from './GalleryStatick';
@@ -14,7 +14,7 @@ class Gallery extends React.Component {
       <div className={styles.root}>
         <div className='container'>
           <div className={'row ' + styles.galleryBox}>
-            <div className='col-6'>
+            <div className='col-sm-12 col-md-6'>
               <div className='row no-gutters'>
                 <div className={'col ' + styles.heading}>
                   <h3>Furniture Gallery</h3>
@@ -60,9 +60,16 @@ class Gallery extends React.Component {
                 ))}
               </div>
 
-              <div className={styles.slider}>
+              <SwipeWrapper className={styles.slider}>
                 <div className={styles.navigation}>
-                  <a href='#'>&#x3c;</a>
+                  <a
+                    href='#'
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
+                  >
+                    &#x3c;
+                  </a>
                 </div>
                 <div className={styles.thumbnailBox}>
                   {products.slice(10, 16).map(product => (
@@ -72,12 +79,19 @@ class Gallery extends React.Component {
                   ))}
                 </div>
                 <div className={styles.navigation}>
-                  <a href='#'>&#x3e;</a>
+                  <a
+                    href='#'
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
+                  >
+                    &#x3e;
+                  </a>
                 </div>
-              </div>
+              </SwipeWrapper>
             </div>
 
-            <div className='col-6'>
+            <div className='col-md-6 d-none d-md-block'>
               <GalleryStatick
                 image={products[1].image}
                 name={products[1].name}
