@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Stars.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,20 +6,16 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
 const Stars = ({ stars, customerStars, id, setCustomerStars }) => {
-  const [starsHighlightConfirmed, setStarsHighlightConfirmed] = useState(
-    customerStars > 0 ? customerStars : stars
-  );
-  const [starsHighlight, setStarsHighlight] = useState(starsHighlightConfirmed);
+  const [starsHighlight, setStarsHighlight] = useState(0);
   const starsArray = [1, 2, 3, 4, 5];
-  const handleStarMouseOver = (e, i) => {
+  const handlerStarMouseOver = i => {
     setStarsHighlight(i);
   };
-  const handleStarMouseLeave = () => {
-    setStarsHighlight(starsHighlightConfirmed);
+  const handlerStarMouseLeave = () => {
+    setStarsHighlight(0);
   };
-  const handleStarClick = (e, i) => {
+  const handlerStarClick = (e, i) => {
     e.preventDefault();
-    setStarsHighlightConfirmed(i);
     setCustomerStars(i, id);
   };
   return (
@@ -28,13 +24,27 @@ const Stars = ({ stars, customerStars, id, setCustomerStars }) => {
         <a key={i}>
           {
             <FontAwesomeIcon
-              onMouseOver={e => handleStarMouseOver(e, i)}
-              onMouseLeave={e => handleStarMouseLeave(e, i)}
+              onMouseOver={() => handlerStarMouseOver(i)}
+              onMouseLeave={() => handlerStarMouseLeave(i)}
               onClick={e => {
-                handleStarClick(e, i);
+                handlerStarClick(e, i);
               }}
-              className={customerStars > 0 ? styles.customerStars : ''}
-              icon={starsHighlight >= i ? faStar : farStar}
+              className={
+                customerStars || starsHighlight > 0 ? styles.customerStars : undefined
+              }
+              icon={
+                starsHighlight > 0
+                  ? starsHighlight >= i
+                    ? faStar
+                    : farStar
+                  : customerStars > 0
+                  ? customerStars >= i
+                    ? faStar
+                    : farStar
+                  : stars >= i
+                  ? faStar
+                  : farStar
+              }
             >
               {i} stars
             </FontAwesomeIcon>
