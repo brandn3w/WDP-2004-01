@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './Homepage.module.scss';
 
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
+import Promotions from '../../features/Promotions/PromotionsContainer';
 import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Gallery from '../../features/Gallery/GalleryContainer';
 import Feedback from '../../features/Feedback/FeedbackContainer';
@@ -12,6 +13,7 @@ import ProductsToCompare from '../../features/ProductsToCompare/ProductsToCompar
 const Homepage = () => (
   <div className={styles.root}>
     <FeatureBoxes />
+    <Promotions />
     <NewFurniture />
     <ProductsToCompare />
     <Gallery />
