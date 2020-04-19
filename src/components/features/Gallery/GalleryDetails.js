@@ -13,6 +13,7 @@ const GalleryDetails = ({
   customerStars,
   setCustomerStars,
 }) => {
+  console.log('customerStar', customerStars);
   return (
     <>
       <div className={styles.price}>
