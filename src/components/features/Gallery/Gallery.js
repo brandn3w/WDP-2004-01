@@ -1,14 +1,65 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
+import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
 import GalleryIcons from './GalleryIcons';
 import GalleryDetails from './GalleryDetails';
 import GalleryStatick from './GalleryStatick';
 
 class Gallery extends React.Component {
-  render() {
-    const { products, galleryTabs, setCustomerStars } = this.props;
+  state = {
+    startIndex: 0,
+    finishIndex: 4,
+    toRight: false,
+    toLeft: true,
+  };
 
+  nextButon(e) {
+    const { startIndex, finishIndex } = this.state;
+
+    e.preventDefault();
+    if (finishIndex < this.props.products.length) {
+      this.setState({
+        startIndex: startIndex + finishIndex,
+        finishIndex: finishIndex + finishIndex,
+      });
+    } else {
+      this.setState({
+        toRight: true,
+      });
+    }
+    this.setState({
+      toLeft: false,
+    });
+  }
+  prevButon(e) {
+    const { startIndex, finishIndex } = this.state;
+
+    e.preventDefault();
+
+    if (startIndex > 0 && finishIndex > 0) {
+      this.setState({
+        startIndex: startIndex - finishIndex,
+        finishIndex: finishIndex - finishIndex,
+      });
+    } else {
+      this.setState({
+        toLeft: true,
+      });
+    }
+    this.setState({
+      toRight: false,
+    });
+  }
+
+  render() {
+    const { products, galleryTabs, setCustomerStars, windowMode } = this.props;
+    const { startIndex, finishIndex } = this.state;
+    const productCount = {
+      desktops: 3,
+      tablets: 2,
+      phones: 0,
+    };
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -58,38 +109,37 @@ class Gallery extends React.Component {
                   </div>
                 ))}
               </div>
-
-              <div className={styles.slider}>
-                <div className={styles.navigation}>
-                  <a
-                    href='#'
-                    onClick={e => {
-                      e.preventDefault();
-                    }}
-                  >
-                    &#x3c;
-                  </a>
+              <SwipeWrapper
+                leftAction={() =>
+                  this.prevButon(finishIndex + productCount[windowMode])
+                }
+                rightAction={() =>
+                  this.nextButon(finishIndex + productCount[windowMode])
+                }
+              >
+                <div className={styles.slider}>
+                  <div className={styles.navigation}>
+                    <a href='#' onClick={e => this.prevButon(e)}>
+                      &#x3c;
+                    </a>
+                  </div>
+                  <div className={styles.thumbnailBox}>
+                    {products
+                      .slice(startIndex, finishIndex + productCount[windowMode])
+                      .map(product => (
+                        <div key={product.id} className={styles.thumbnail}>
+                          <img src={product.image} alt={product.name}></img>
+                        </div>
+                      ))}
+                  </div>
+                  <div className={styles.navigation}>
+                    <a href='#' onClick={e => this.nextButon(e)}>
+                      &#x3e;
+                    </a>
+                  </div>
                 </div>
-                <div className={styles.thumbnailBox}>
-                  {products.slice(10, 16).map(product => (
-                    <div key={product.id} className={styles.thumbnail}>
-                      <img src={product.image} alt={product.name}></img>
-                    </div>
-                  ))}
-                </div>
-                <div className={styles.navigation}>
-                  <a
-                    href='#'
-                    onClick={e => {
-                      e.preventDefault();
-                    }}
-                  >
-                    &#x3e;
-                  </a>
-                </div>
-              </div>
+              </SwipeWrapper>
             </div>
-
             <div className='col-md-6 d-none d-md-block'>
               <GalleryStatick
                 image={products[1].image}
@@ -109,5 +159,6 @@ Gallery.propTypes = {
   products: PropTypes.array,
   galleryTabs: PropTypes.array,
   setCustomerStars: PropTypes.func,
+  windowMode: PropTypes.string,
 };
 export default Gallery;

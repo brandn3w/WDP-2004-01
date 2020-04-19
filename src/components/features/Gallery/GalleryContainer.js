@@ -5,10 +5,12 @@ import Gallery from './Gallery';
 import { getAll } from '../../../redux/galleryRedux';
 import { getAllTabs } from '../../../redux/galleryRedux';
 import { setCustomerStars } from '../../../redux/productsRedux.js';
+import { getMode } from '../../../redux/windowRedux.js';
 
 const mapStateToProps = state => ({
   products: getAll(state),
   galleryTabs: getAllTabs(state),
+  windowMode: getMode(state),
 });
 
 const mapDispatchToProps = dispatch => ({
