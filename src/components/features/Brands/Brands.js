@@ -8,45 +8,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 class Brands extends React.Component {
+  state = {
+    activeBrands: 6,
+  };
   render() {
     const { brands } = this.props;
-    console.log(brands);
+    const { activeBrands } = this.state;
     return (
       <div className={'container'}>
         <div className={styles.componentContainer}>
           <div className={styles.swipe}>
             <FontAwesomeIcon icon={faChevronLeft} className={styles.icon} />
           </div>
-          {brands.map(brands => (
+          {brands.slice(0, activeBrands).map(brands => (
             <div key={brands.id} className={styles.brandContainer}>
               <BrandsBox {...brands} />
             </div>
           ))}
-          {brands.map(brands => (
-            <div key={brands.id} className={styles.brandContainer}>
-              <BrandsBox {...brands} />
-            </div>
-          ))}
-          {brands.map(brands => (
-            <div key={brands.id} className={styles.brandContainer}>
-              <BrandsBox {...brands} />
-            </div>
-          ))}
-          {brands.map(brands => (
-            <div key={brands.id} className={styles.brandContainer}>
-              <BrandsBox {...brands} />
-            </div>
-          ))}
-          {brands.map(brands => (
-            <div key={brands.id} className={styles.brandContainer}>
-              <BrandsBox {...brands} />
-            </div>
-          ))}
-          {brands.map(brands => (
-            <div key={brands.id} className={styles.brandContainer}>
-              <BrandsBox {...brands} />
-            </div>
-          ))}
+
           <div className={styles.swipe}>
             <FontAwesomeIcon icon={faChevronRight} className={styles.icon} />
           </div>

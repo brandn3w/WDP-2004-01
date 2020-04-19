@@ -487,8 +487,52 @@ const initialState = {
     {
       id: 1,
       name: 'brand logo',
-      image:
-        'https://images.pexels.com/photos/1337386/pexels-photo-1337386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 2,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 3,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 4,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 5,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 6,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 7,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 8,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 9,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
+    },
+    {
+      id: 10,
+      name: 'brand logo',
+      image: 'https://www.stockvault.net/data/2010/09/20/114878/preview16.jpg',
     },
   ],
 };
