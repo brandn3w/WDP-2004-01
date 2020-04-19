@@ -74,6 +74,8 @@
             }
           }
         }
+
+   
       }
     }
 
@@ -104,7 +106,24 @@
             @include btn-hover;
           }
         }
+    
       }
+    
     }
   }
+
+}
+
+@media screen and (min-width:300px) and (max-width: 760px){
+
+  .panelBar{
+
+padding-bottom: 40px;
+
+}
+
+.dots {
+margin-top: 40px;
+
+}
 }

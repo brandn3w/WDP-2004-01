@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './NewFurniture.module.scss';
-import ProductBox from '../../common/ProductBox/ProductBox';
+import ProductBox from '../../common/ProductBox/ProductBoxContainer';
 import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
 
 class NewFurniture extends React.Component {
@@ -30,19 +30,22 @@ class NewFurniture extends React.Component {
   }
 
   render() {
-    const { categories, products } = this.props;
+    const { categories, products, setCustomerStars, windowMode } = this.props;
     const { activeCategory, activePage } = this.state;
-
+    const productCount = {
+      desktops: 8,
+      tablets: 3,
+      phones: 2,
+    };
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
-
+    const pagesCount = Math.ceil(categoryProducts.length / productCount[windowMode]);
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : undefined}
           >
             page {i}
           </a>
@@ -65,7 +68,9 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={
+                          item.id === activeCategory ? styles.active : undefined
+                        }
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -89,12 +94,15 @@ class NewFurniture extends React.Component {
               this.handlePageChange(activePage > 0 ? activePage - 1 : 0)
             }
           >
-            <div ref={this.rowRef} className='row fade show'>
+            <div ref={this.rowRef} className='row fade show '>
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(
+                  activePage * productCount[windowMode],
+                  (activePage + 1) * productCount[windowMode]
+                )
                 .map(item => (
-                  <div key={item.id} className='col-3'>
-                    <ProductBox {...item} />
+                  <div key={item.id} className='col-lg-3 col-md-6 col-sm-12'>
+                    <ProductBox setCustomerStars={setCustomerStars} {...item} />
                   </div>
                 ))}
             </div>
@@ -106,6 +114,7 @@ class NewFurniture extends React.Component {
 }
 
 NewFurniture.propTypes = {
+  setCustomerStars: PropTypes.func,
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
@@ -120,10 +129,12 @@ NewFurniture.propTypes = {
       category: PropTypes.string,
       price: PropTypes.number,
       stars: PropTypes.number,
+      customerStars: PropTypes.number,
       promo: PropTypes.string,
       newFurniture: PropTypes.bool,
     })
   ),
+  windowMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {

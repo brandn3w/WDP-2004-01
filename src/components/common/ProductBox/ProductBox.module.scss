@@ -1,9 +1,26 @@
 @import "../../../styles/settings.scss";
 
+
 .root {
   background-color: $root-bg;
   border: 1px solid $product-box-root;
   margin-bottom: 2rem;
+  
+  .buttons {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    @extend %btn-hover-base;
+  }
+
+  &:hover .buttons{
+    opacity: 1;
+  }
+
+  &:hover .priceHover {
+    background-color: $primary;
+  }
 
   .photo {
     position: relative;
@@ -24,7 +41,7 @@
       transform: translateX(-50%);
       background-color: $product-box-sale;
       border-radius: 50%;
-      color: $product-box-sale;
+      color: $product-box-sale-text;
       padding: 30px 15px 5px 15px;
     }
 
@@ -38,11 +55,7 @@
       object-fit: cover;
     }
 
-    .buttons {
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-    }
+
   }
 
   .content {
@@ -95,3 +108,4 @@
 .oldPrice {
   text-decoration: line-through;
 }
+

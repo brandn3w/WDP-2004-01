@@ -21,13 +21,15 @@
 
 .small {
   @extend .main;
+  background-color: $mega-dark-gray;
   font-size: 13px;
   line-height: 24px;
   padding: 5px 10px;
   font-weight: 400;
+ 
 }
 
-.outline {
+.outline{
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid $button-outline-border;
@@ -41,3 +43,40 @@
   }
   @include btn-hover($text-color-light, $text-color);
 }
+
+
+.outlineOrange {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid $button-outline-border;
+  color: $button-outline-color;
+  font-size: 13px;
+  line-height: 22px;
+
+  &:not(.noHover):hover {
+    background-color: transparent;
+    color: $primary;
+    border: 1px solid $primary;
+  }
+}
+
+.green {
+  @extend .main;
+  background-color: $text-color-green;
+  color: $main-color;
+  padding: 10px 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.active {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #2a2a2a;
+  font-size: 13px;
+  line-height: 22px;
+  background-color: $primary;
+  color: #ffffff;
+  transition:  background-color 0.5s ease, color 1s ease;
+}
+

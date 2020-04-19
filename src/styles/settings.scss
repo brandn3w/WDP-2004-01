@@ -10,7 +10,7 @@ $super-dark-gray: #2a2a2a;
 $mega-dark-gray: #292929;
 
 $shadow-gray: rgba(1, 2, 2, 0.2);
- 
+
 $intensive-orange: #d58e32;
 
 $white: #ffffff;
@@ -23,6 +23,7 @@ $lighter-light-gray: rgb(216, 216, 216);
 $light-gray: #b6b6b6;
 $gray: rgb(169, 169, 169);
 
+$color-green-1: #80c904;
 
 // variable color assigned to variable by usage
 $company-claim-cart: $super-light-gray;
@@ -47,14 +48,16 @@ $icon-wrapper-before: $white;
 $button-outline-hover: $super-dark-gray;
 $button-outline-border: $super-dark-gray;
 $button-outline-color: $super-dark-gray;
-$button-outline-hover-color: $white; 
+$button-outline-hover-color: $white;
 
 $product-box-line: $super-dark-gray;
 $product-box-stars: $mega-dark-gray;
-$product-box-sale: $white;
+$product-box-sale-text: $white;
 $product-box-root: $mega-light-gray;
 $product-box-photo: $white-gray;
 $product-box-sale: $mega-dark-gray;
+
+$promotion-box: $mega-dark-gray;
 
 $menu-bar-root: $white;
 $menu-bar-a: $white;
@@ -82,6 +85,7 @@ $text-color: $super-dark-gray;
 $feature-box-content: $mega-dark-gray;
 $form-border-color: $mega-dark-gray;
 $primary: $intensive-orange;
+$text-color-green: $color-green-1;
 //-----------end--------------------------------
 
 $transition: all 0.25s, background-color 0.25s, color 0.25s;
@@ -97,9 +101,9 @@ $transition: all 0.25s, background-color 0.25s, color 0.25s;
 
 
 @mixin btn-hover(
-  $hover-color: $text-color-light, 
+  $hover-color: $text-color-light,
   $hover-bg-color: $primary,
-  $border-color: currentcolor, 
+  $border-color: currentcolor,
   ) {
   @extend %btn-hover-base;
   &.active,
@@ -109,4 +113,10 @@ $transition: all 0.25s, background-color 0.25s, color 0.25s;
     background-color: $hover-bg-color;
     color: $hover-color;
   }
-}  
+}
+
+@mixin flex-center(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
