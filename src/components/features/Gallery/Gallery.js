@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
-import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
 import GalleryIcons from './GalleryIcons';
 import GalleryDetails from './GalleryDetails';
 import GalleryStatick from './GalleryStatick';
@@ -60,7 +59,7 @@ class Gallery extends React.Component {
                 ))}
               </div>
 
-              <SwipeWrapper className={styles.slider}>
+              <div className={styles.slider}>
                 <div className={styles.navigation}>
                   <a
                     href='#'
@@ -88,7 +87,7 @@ class Gallery extends React.Component {
                     &#x3e;
                   </a>
                 </div>
-              </SwipeWrapper>
+              </div>
             </div>
 
             <div className='col-md-6 d-none d-md-block'>
