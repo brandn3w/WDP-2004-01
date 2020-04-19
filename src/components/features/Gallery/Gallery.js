@@ -120,10 +120,10 @@ class Gallery extends React.Component {
               </div>
               <SwipeWrapper
                 leftAction={() =>
-                  this.prevButon(finishIndex - productCount[windowMode])
+                  this.nextButon(finishIndex + productCount[windowMode])
                 }
                 rightAction={() =>
-                  this.nextButon(finishIndex + productCount[windowMode])
+                  this.prevButon(finishIndex - productCount[windowMode])
                 }
                 trackMouse
                 preventDefaultTouchmoveEvent
