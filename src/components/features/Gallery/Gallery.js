@@ -8,20 +8,24 @@ import GalleryStatick from './GalleryStatick';
 
 class Gallery extends React.Component {
   state = {
-    startIndex: 0,
-    finishIndex: 4,
+    startIndex: 1,
+    finishIndex: 2,
     toRight: false,
     toLeft: true,
   };
 
-  nextButon(e) {
+  nextButon() {
     const { startIndex, finishIndex } = this.state;
+    const productCount = {
+      desktops: 3,
+      tablets: 2,
+      phones: 0,
+    };
 
-    e.preventDefault();
     if (finishIndex < this.props.products.length) {
       this.setState({
-        startIndex: startIndex + finishIndex,
-        finishIndex: finishIndex + finishIndex,
+        startIndex: startIndex + productCount[this.props.windowMode],
+        finishIndex: finishIndex + productCount[this.props.windowMode],
       });
     } else {
       this.setState({
@@ -31,16 +35,20 @@ class Gallery extends React.Component {
     this.setState({
       toLeft: false,
     });
+    console.log(startIndex, finishIndex);
   }
-  prevButon(e) {
+  prevButon() {
     const { startIndex, finishIndex } = this.state;
+    const productCount = {
+      desktops: 3,
+      tablets: 2,
+      phones: 0,
+    };
 
-    e.preventDefault();
-
-    if (startIndex > 0 && finishIndex > 0) {
+    if (startIndex > 1 && finishIndex > 0) {
       this.setState({
-        startIndex: startIndex - finishIndex,
-        finishIndex: finishIndex - finishIndex,
+        startIndex: startIndex - productCount[this.props.windowMode],
+        finishIndex: finishIndex - productCount[this.props.windowMode],
       });
     } else {
       this.setState({
@@ -50,6 +58,7 @@ class Gallery extends React.Component {
     this.setState({
       toRight: false,
     });
+    console.log(startIndex, finishIndex);
   }
 
   render() {
@@ -58,7 +67,7 @@ class Gallery extends React.Component {
     const productCount = {
       desktops: 3,
       tablets: 2,
-      phones: 0,
+      phones: 1,
     };
     return (
       <div className={styles.root}>
@@ -111,15 +120,23 @@ class Gallery extends React.Component {
               </div>
               <SwipeWrapper
                 leftAction={() =>
-                  this.prevButon(finishIndex + productCount[windowMode])
+                  this.prevButon(finishIndex - productCount[windowMode])
                 }
                 rightAction={() =>
                   this.nextButon(finishIndex + productCount[windowMode])
                 }
+                trackMouse
+                preventDefaultTouchmoveEvent
               >
                 <div className={styles.slider}>
                   <div className={styles.navigation}>
-                    <a href='#' onClick={e => this.prevButon(e)}>
+                    <a
+                      href='#'
+                      onClick={e => {
+                        e.preventDefault();
+                        this.prevButon(e);
+                      }}
+                    >
                       &#x3c;
                     </a>
                   </div>
@@ -133,7 +150,13 @@ class Gallery extends React.Component {
                       ))}
                   </div>
                   <div className={styles.navigation}>
-                    <a href='#' onClick={e => this.nextButon(e)}>
+                    <a
+                      href='#'
+                      onClick={e => {
+                        e.preventDefault();
+                        this.nextButon(e);
+                      }}
+                    >
                       &#x3e;
                     </a>
                   </div>
