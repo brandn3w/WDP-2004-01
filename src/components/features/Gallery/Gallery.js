@@ -35,7 +35,6 @@ class Gallery extends React.Component {
     this.setState({
       toLeft: false,
     });
-    console.log(startIndex, finishIndex);
   }
   prevButon() {
     const { startIndex, finishIndex } = this.state;
@@ -58,7 +57,6 @@ class Gallery extends React.Component {
     this.setState({
       toRight: false,
     });
-    console.log(startIndex, finishIndex);
   }
 
   render() {
@@ -134,7 +132,7 @@ class Gallery extends React.Component {
                       href='#'
                       onClick={e => {
                         e.preventDefault();
-                        this.prevButon(e);
+                        this.prevButon();
                       }}
                     >
                       &#x3c;
@@ -154,7 +152,7 @@ class Gallery extends React.Component {
                       href='#'
                       onClick={e => {
                         e.preventDefault();
-                        this.nextButon(e);
+                        this.nextButon();
                       }}
                     >
                       &#x3e;
