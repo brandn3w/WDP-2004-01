@@ -76,3 +76,7 @@
     }
   }
 }
+
+.root + div {
+  float: right;
+}

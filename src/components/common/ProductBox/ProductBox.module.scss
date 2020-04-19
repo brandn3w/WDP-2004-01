@@ -1,5 +1,6 @@
 @import "../../../styles/settings.scss";
 
+
 .root {
   background-color: $root-bg;
   border: 1px solid $product-box-root;
@@ -107,3 +108,4 @@
 .oldPrice {
   text-decoration: line-through;
 }
+

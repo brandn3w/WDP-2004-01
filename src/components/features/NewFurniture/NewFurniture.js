@@ -94,14 +94,14 @@ class NewFurniture extends React.Component {
               this.handlePageChange(activePage > 0 ? activePage - 1 : 0)
             }
           >
-            <div ref={this.rowRef} className='row fade show'>
+            <div ref={this.rowRef} className='row fade show '>
               {categoryProducts
                 .slice(
                   activePage * productCount[windowMode],
                   (activePage + 1) * productCount[windowMode]
                 )
                 .map(item => (
-                  <div key={item.id} className='col-3'>
+                  <div key={item.id} className='col-lg-3 col-md-6 col-sm-12'>
                     <ProductBox setCustomerStars={setCustomerStars} {...item} />
                   </div>
                 ))}
