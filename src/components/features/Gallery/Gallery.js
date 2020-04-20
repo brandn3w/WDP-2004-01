@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
@@ -14,8 +14,15 @@ class Gallery extends React.Component {
     toLeft: true,
     activeTab: 'topseller',
   };
+  constructor(props) {
+    super(props);
+    this.rowRef = createRef();
+    this.silderRef = createRef();
+  }
 
   TabChange(newTab) {
+    this.silderRef.current.className = styles.thumbnailBox + ' fade';
+    this.rowRef.current.className = styles.product + '  fade';
     setTimeout(() => {
       this.setState({ activeTab: newTab });
     }, 250);
@@ -74,12 +81,14 @@ class Gallery extends React.Component {
       tablets: 2,
       phones: 1,
     };
-    const setElementTab = {
-      featured: 25,
-      topseller: 15,
-      saleoff: 10,
-      toprated: 5,
-    };
+    const filterTabGallery = products.filter(item => item[activeTab]);
+
+    if (this.rowRef.current) {
+      this.rowRef.current.className = styles.product;
+    }
+    if (this.silderRef.current) {
+      this.silderRef.current.className = styles.thumbnailBox;
+    }
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -105,8 +114,8 @@ class Gallery extends React.Component {
                 </ul>
               </div>
 
-              <div className={styles.product + ' fade show'}>
-                {products.slice(setElementTab[activeTab]).map(product => (
+              <div ref={this.rowRef} className={styles.product}>
+                {filterTabGallery.slice(1).map(product => (
                   <div key={product.id} className={styles.product}>
                     <img src={product.image} alt={product.name} />
                     <GalleryIcons />
@@ -123,12 +132,8 @@ class Gallery extends React.Component {
                 ))}
               </div>
               <SwipeWrapper
-                leftAction={() =>
-                  this.nextButon(finishIndex + productCount[windowMode])
-                }
-                rightAction={() =>
-                  this.prevButon(finishIndex - productCount[windowMode])
-                }
+                leftAction={() => this.nextButon()}
+                rightAction={() => this.prevButon()}
                 trackMouse
                 preventDefaultTouchmoveEvent
               >
@@ -139,13 +144,15 @@ class Gallery extends React.Component {
                       onClick={e => {
                         e.preventDefault();
                         this.prevButon();
+                        this.silderRef.current.className =
+                          styles.thumbnailBox + ' fade';
                       }}
                     >
                       &#x3c;
                     </a>
                   </div>
-                  <div className={styles.thumbnailBox}>
-                    {products
+                  <div ref={this.silderRef} className={styles.thumbnailBox}>
+                    {filterTabGallery
                       .slice(startIndex, finishIndex + productCount[windowMode])
                       .map(product => (
                         <div key={product.id} className={styles.thumbnail}>
@@ -159,6 +166,8 @@ class Gallery extends React.Component {
                       onClick={e => {
                         e.preventDefault();
                         this.nextButon();
+                        this.silderRef.current.className =
+                          styles.thumbnailBox + ' fade';
                       }}
                     >
                       &#x3e;
