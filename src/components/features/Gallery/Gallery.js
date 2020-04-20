@@ -1,20 +1,77 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
-
+import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
 import GalleryIcons from './GalleryIcons';
 import GalleryDetails from './GalleryDetails';
 import GalleryStatick from './GalleryStatick';
 
 class Gallery extends React.Component {
-  render() {
-    const { products, galleryTabs, setCustomerStars } = this.props;
+  state = {
+    startIndex: 1,
+    finishIndex: 2,
+    toRight: false,
+    toLeft: true,
+  };
 
+  nextButon() {
+    const { startIndex, finishIndex } = this.state;
+    const productCount = {
+      desktops: 3,
+      tablets: 2,
+      phones: 0,
+    };
+
+    if (finishIndex < this.props.products.length) {
+      this.setState({
+        startIndex: startIndex + productCount[this.props.windowMode],
+        finishIndex: finishIndex + productCount[this.props.windowMode],
+      });
+    } else {
+      this.setState({
+        toRight: true,
+      });
+    }
+    this.setState({
+      toLeft: false,
+    });
+  }
+  prevButon() {
+    const { startIndex, finishIndex } = this.state;
+    const productCount = {
+      desktops: 3,
+      tablets: 2,
+      phones: 0,
+    };
+
+    if (startIndex > 1 && finishIndex > 0) {
+      this.setState({
+        startIndex: startIndex - productCount[this.props.windowMode],
+        finishIndex: finishIndex - productCount[this.props.windowMode],
+      });
+    } else {
+      this.setState({
+        toLeft: true,
+      });
+    }
+    this.setState({
+      toRight: false,
+    });
+  }
+
+  render() {
+    const { products, galleryTabs, setCustomerStars, windowMode } = this.props;
+    const { startIndex, finishIndex } = this.state;
+    const productCount = {
+      desktops: 3,
+      tablets: 2,
+      phones: 1,
+    };
     return (
       <div className={styles.root}>
         <div className='container'>
           <div className={'row ' + styles.galleryBox}>
-            <div className='col-6'>
+            <div className='col-sm-12 col-md-6'>
               <div className='row no-gutters'>
                 <div className={'col ' + styles.heading}>
                   <h3>Furniture Gallery</h3>
@@ -59,25 +116,52 @@ class Gallery extends React.Component {
                   </div>
                 ))}
               </div>
-
-              <div className={styles.slider}>
-                <div className={styles.navigation}>
-                  <a href='#'>&#x3c;</a>
+              <SwipeWrapper
+                leftAction={() =>
+                  this.nextButon(finishIndex + productCount[windowMode])
+                }
+                rightAction={() =>
+                  this.prevButon(finishIndex - productCount[windowMode])
+                }
+                trackMouse
+                preventDefaultTouchmoveEvent
+              >
+                <div className={styles.slider}>
+                  <div className={styles.navigation}>
+                    <a
+                      href='#'
+                      onClick={e => {
+                        e.preventDefault();
+                        this.prevButon();
+                      }}
+                    >
+                      &#x3c;
+                    </a>
+                  </div>
+                  <div className={styles.thumbnailBox}>
+                    {products
+                      .slice(startIndex, finishIndex + productCount[windowMode])
+                      .map(product => (
+                        <div key={product.id} className={styles.thumbnail}>
+                          <img src={product.image} alt={product.name}></img>
+                        </div>
+                      ))}
+                  </div>
+                  <div className={styles.navigation}>
+                    <a
+                      href='#'
+                      onClick={e => {
+                        e.preventDefault();
+                        this.nextButon();
+                      }}
+                    >
+                      &#x3e;
+                    </a>
+                  </div>
                 </div>
-                <div className={styles.thumbnailBox}>
-                  {products.slice(10, 16).map(product => (
-                    <div key={product.id} className={styles.thumbnail}>
-                      <img src={product.image} alt={product.name}></img>
-                    </div>
-                  ))}
-                </div>
-                <div className={styles.navigation}>
-                  <a href='#'>&#x3e;</a>
-                </div>
-              </div>
+              </SwipeWrapper>
             </div>
-
-            <div className='col-6'>
+            <div className='col-md-6 d-none d-md-block'>
               <GalleryStatick
                 image={products[1].image}
                 name={products[1].name}
@@ -96,5 +180,6 @@ Gallery.propTypes = {
   products: PropTypes.array,
   galleryTabs: PropTypes.array,
   setCustomerStars: PropTypes.func,
+  windowMode: PropTypes.string,
 };
 export default Gallery;
