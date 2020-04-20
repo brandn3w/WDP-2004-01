@@ -12,7 +12,14 @@ class Gallery extends React.Component {
     finishIndex: 2,
     toRight: false,
     toLeft: true,
+    activeTab: 'topseller',
   };
+
+  TabChange(newTab) {
+    setTimeout(() => {
+      this.setState({ activeTab: newTab });
+    }, 250);
+  }
 
   nextButon() {
     const { startIndex, finishIndex } = this.state;
@@ -61,11 +68,17 @@ class Gallery extends React.Component {
 
   render() {
     const { products, galleryTabs, setCustomerStars, windowMode } = this.props;
-    const { startIndex, finishIndex } = this.state;
+    const { startIndex, finishIndex, activeTab } = this.state;
     const productCount = {
-      desktops: 3,
+      desktops: 4,
       tablets: 2,
       phones: 1,
+    };
+    const setElementTab = {
+      featured: 25,
+      topseller: 15,
+      saleoff: 10,
+      toprated: 5,
     };
     return (
       <div className={styles.root}>
@@ -79,28 +92,21 @@ class Gallery extends React.Component {
               </div>
               <div className={styles.menu}>
                 <ul>
-                  {galleryTabs.map(tab => {
-                    if (tab.active) {
-                      return (
-                        <li key={tab.id}>
-                          <a href='#' className={styles.active}>
-                            {tab.name}
-                          </a>
-                        </li>
-                      );
-                    } else {
-                      return (
-                        <li key={tab.id}>
-                          <a href='#'>{tab.name}</a>
-                        </li>
-                      );
-                    }
-                  })}
+                  {galleryTabs.map(tab => (
+                    <li key={tab.id}>
+                      <a
+                        className={tab.id === activeTab ? styles.active : undefined}
+                        onClick={() => this.TabChange(tab.id)}
+                      >
+                        {tab.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              <div className={styles.product}>
-                {products.slice(21).map(product => (
+              <div className={styles.product + ' fade show'}>
+                {products.slice(setElementTab[activeTab]).map(product => (
                   <div key={product.id} className={styles.product}>
                     <img src={product.image} alt={product.name} />
                     <GalleryIcons />

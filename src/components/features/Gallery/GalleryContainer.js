@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 
 import Gallery from './Gallery';
 
-import { getAll } from '../../../redux/galleryRedux';
-import { getAllTabs } from '../../../redux/galleryRedux';
+import { getAll, getAllTabs } from '../../../redux/galleryRedux';
 import { setCustomerStars } from '../../../redux/productsRedux.js';
 import { getMode } from '../../../redux/windowRedux.js';
 
