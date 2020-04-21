@@ -13,6 +13,7 @@ class Gallery extends React.Component {
     toRight: false,
     toLeft: true,
     activeTab: 'topseller',
+    mainSlide: 'aenean-ru-bristique-15',
   };
   constructor(props) {
     super(props);
@@ -21,11 +22,15 @@ class Gallery extends React.Component {
   }
 
   TabChange(newTab) {
-    this.silderRef.current.className = styles.thumbnailBox + ' fade';
+    this.silderRef.current.className = styles.slider + ' fade';
     this.rowRef.current.className = styles.product + '  fade';
     setTimeout(() => {
       this.setState({ activeTab: newTab });
     }, 250);
+  }
+  slideChange(newSlide) {
+    this.setState({ mainSlide: newSlide });
+    console.log(this.state.mainSlide);
   }
 
   nextButon() {
@@ -75,7 +80,7 @@ class Gallery extends React.Component {
 
   render() {
     const { products, galleryTabs, setCustomerStars, windowMode } = this.props;
-    const { startIndex, finishIndex, activeTab } = this.state;
+    const { startIndex, finishIndex, activeTab, mainSlide } = this.state;
     const productCount = {
       desktops: 4,
       tablets: 2,
@@ -87,7 +92,7 @@ class Gallery extends React.Component {
       this.rowRef.current.className = styles.product;
     }
     if (this.silderRef.current) {
-      this.silderRef.current.className = styles.thumbnailBox;
+      this.silderRef.current.className = styles.slider;
     }
     return (
       <div className={styles.root}>
@@ -115,7 +120,7 @@ class Gallery extends React.Component {
               </div>
 
               <div ref={this.rowRef} className={styles.product}>
-                {filterTabGallery.slice(1).map(product => (
+                {filterTabGallery.slice((products.id = mainSlide)).map(product => (
                   <div key={product.id} className={styles.product}>
                     <img src={product.image} alt={product.name} />
                     <GalleryIcons />
@@ -137,25 +142,29 @@ class Gallery extends React.Component {
                 trackMouse
                 preventDefaultTouchmoveEvent
               >
-                <div className={styles.slider}>
+                <div ref={this.silderRef} className={styles.slider}>
                   <div className={styles.navigation}>
                     <a
                       href='#'
                       onClick={e => {
                         e.preventDefault();
                         this.prevButon();
-                        this.silderRef.current.className =
-                          styles.thumbnailBox + ' fade';
                       }}
                     >
                       &#x3c;
                     </a>
                   </div>
-                  <div ref={this.silderRef} className={styles.thumbnailBox}>
+                  <div className={styles.thumbnailBox}>
                     {filterTabGallery
                       .slice(startIndex, finishIndex + productCount[windowMode])
                       .map(product => (
-                        <div key={product.id} className={styles.thumbnail}>
+                        <div
+                          onClick={() => {
+                            this.slideChange(product.id);
+                          }}
+                          key={product.id}
+                          className={styles.thumbnail}
+                        >
                           <img src={product.image} alt={product.name}></img>
                         </div>
                       ))}
@@ -166,8 +175,6 @@ class Gallery extends React.Component {
                       onClick={e => {
                         e.preventDefault();
                         this.nextButon();
-                        this.silderRef.current.className =
-                          styles.thumbnailBox + ' fade';
                       }}
                     >
                       &#x3e;
