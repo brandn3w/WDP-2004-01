@@ -73,3 +73,43 @@
     }
   }
 }
+
+
+@media screen and (min-width:320px) and (max-width: 768px){
+ 
+  .container{     
+    justify-items: flex-start;
+  }
+    
+   
+.cart{
+  order: 2;
+  margin-bottom: 180px;
+  margin-left: 20px;    
+  }
+
+
+img {
+  order: 1;
+  margin-bottom: 100px;
+}
+
+.phoneNumber {
+
+  order: 3;
+
+p {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 100;
+   
+  }
+
+    .icon {
+      position: absolute;
+      bottom: 40px;
+      right: 150px;
+      font-size: 24px;
+    }
+  }
+}
