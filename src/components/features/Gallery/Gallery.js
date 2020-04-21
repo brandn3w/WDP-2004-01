@@ -31,10 +31,16 @@ class Gallery extends React.Component {
     const newSlide = filterTabGallery.slice(1);
 
     setTimeout(() => {
-      this.setState({ mainSlide: newSlide[1].id });
-      this.setState({ activeTab: newTab });
+      this.setState({
+        activeTab: newTab,
+      });
     }, 250);
-    console.log(this.state.mainSlide);
+    setTimeout(() => {
+      this.setState({
+        mainSlide: newSlide[1].id,
+      });
+      console.log(this.state.mainSlide);
+    }, 350);
   }
   slideChange(newSlide) {
     this.rowRef.current.classList = styles.product + '  fade';
@@ -132,7 +138,7 @@ class Gallery extends React.Component {
                 {filterTabGallery
                   .filter(product => product.id === mainSlide)
                   .map(product => (
-                    <div ref={this.rowRef} key={product.id} className={styles.product}>
+                    <div key={product.id} className={styles.product}>
                       <img src={product.image} alt={product.name} />
                       <GalleryIcons />
                       <GalleryDetails
