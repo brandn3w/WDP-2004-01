@@ -24,13 +24,21 @@ class Gallery extends React.Component {
   TabChange(newTab) {
     this.silderRef.current.className = styles.slider + ' fade';
     this.rowRef.current.className = styles.product + '  fade';
+
+    const filterTabGallery = this.props.products.filter(
+      item => item[this.state.activeTab]
+    );
+    const newSlide = filterTabGallery.slice(1);
+
     setTimeout(() => {
+      this.setState({ mainSlide: newSlide[1].id });
       this.setState({ activeTab: newTab });
     }, 250);
+    console.log(this.state.mainSlide);
   }
   slideChange(newSlide) {
+    this.rowRef.current.classList = styles.product + '  fade';
     this.setState({ mainSlide: newSlide });
-    console.log(this.state.mainSlide);
   }
 
   nextButon() {
@@ -94,6 +102,7 @@ class Gallery extends React.Component {
     if (this.silderRef.current) {
       this.silderRef.current.className = styles.slider;
     }
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -120,21 +129,23 @@ class Gallery extends React.Component {
               </div>
 
               <div ref={this.rowRef} className={styles.product}>
-                {filterTabGallery.slice((products.id = mainSlide)).map(product => (
-                  <div key={product.id} className={styles.product}>
-                    <img src={product.image} alt={product.name} />
-                    <GalleryIcons />
-                    <GalleryDetails
-                      id={product.id}
-                      name={product.name}
-                      price={product.price}
-                      oldPrice={product.oldPrice}
-                      stars={product.stars}
-                      customerStars={product.customerStars}
-                      setCustomerStars={setCustomerStars}
-                    />
-                  </div>
-                ))}
+                {filterTabGallery
+                  .filter(product => product.id === mainSlide)
+                  .map(product => (
+                    <div ref={this.rowRef} key={product.id} className={styles.product}>
+                      <img src={product.image} alt={product.name} />
+                      <GalleryIcons />
+                      <GalleryDetails
+                        id={product.id}
+                        name={product.name}
+                        price={product.price}
+                        oldPrice={product.oldPrice}
+                        stars={product.stars}
+                        customerStars={product.customerStars}
+                        setCustomerStars={setCustomerStars}
+                      />
+                    </div>
+                  ))}
               </div>
               <SwipeWrapper
                 leftAction={() => this.nextButon()}

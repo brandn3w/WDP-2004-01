@@ -241,6 +241,9 @@ const initialState = {
       favorite: false,
       compare: false,
       topseller: true,
+      featured: true,
+      saleoff: true,
+      toprated: true,
       image:
         'https://images.pexels.com/photos/909504/pexels-photo-909504.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     },
