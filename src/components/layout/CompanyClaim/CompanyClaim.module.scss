@@ -14,6 +14,7 @@
       line-height: 42px;
       color: $company-claim-phone;
       font-weight: 500;
+      align-items: center;
 
       .icon {
         font-size: 32px;
@@ -71,5 +72,44 @@
         }
       }
     }
+  }
+}
+
+
+@media screen and (min-width:320px) and (max-width: 768px){
+ 
+  .container{     
+    justify-items: flex-start;
+  }
+    
+   
+.cart{
+  order: 2;
+ position: absolute;
+ top: 80px;
+ left: -30px;
+  }
+
+img[alt*="Bazar"]{
+  order: 1;
+  position: absolute;
+  left: 20px;
+  top:-70px;
+}
+
+.phoneNumber {
+  order: 3;
+  svg {
+    position: absolute;
+    bottom: -60px;
+    right: 160px;
+  }
+.telNumber {
+  position: absolute;
+  font-size: 17px;
+  right: 20px;
+  top: 25px;
+}
+   
   }
 }
