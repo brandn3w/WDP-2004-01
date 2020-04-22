@@ -14,6 +14,7 @@
       line-height: 42px;
       color: $company-claim-phone;
       font-weight: 500;
+      align-items: center;
 
       .icon {
         font-size: 32px;
@@ -84,32 +85,31 @@
    
 .cart{
   order: 2;
-  margin-bottom: 180px;
-  margin-left: 20px;    
+ position: absolute;
+ top: 80px;
+ left: -30px;
   }
 
-
-img {
+img[alt*="Bazar"]{
   order: 1;
-  margin-bottom: 100px;
+  position: absolute;
+  left: 20px;
+  top:-70px;
 }
 
 .phoneNumber {
-
   order: 3;
-
-p {
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 100;
-   
+  svg {
+    position: absolute;
+    bottom: -60px;
+    right: 160px;
   }
-
-    .icon {
-      position: absolute;
-      bottom: 40px;
-      right: 150px;
-      font-size: 24px;
-    }
+.telNumber {
+  position: absolute;
+  font-size: 17px;
+  right: 20px;
+  top: 25px;
+}
+   
   }
 }
