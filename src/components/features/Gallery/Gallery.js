@@ -13,7 +13,8 @@ class Gallery extends React.Component {
     toRight: false,
     toLeft: true,
     activeTab: 'topseller',
-    mainSlide: 'aenean-ru-bristique-15',
+    mainSlide: 'aenean-ru-bristique-14',
+    newSlide: '',
   };
   constructor(props) {
     super(props);
@@ -22,28 +23,24 @@ class Gallery extends React.Component {
   }
 
   TabChange(newTab) {
-    this.silderRef.current.className = styles.slider + ' fade';
-    this.rowRef.current.className = styles.product + '  fade';
+    this.silderRef.current.className = styles.slider + ' fade show';
+    this.rowRef.current.className = styles.product + '  fade show';
 
-    const filterTabGallery = this.props.products.filter(
-      item => item[this.state.activeTab]
-    );
-    const newSlide = filterTabGallery.slice(1);
-
+    this.setState({
+      activeTab: newTab,
+    });
     setTimeout(() => {
+      const filterTabGallery = this.props.products.filter(
+        item => item[this.state.activeTab]
+      );
       this.setState({
-        activeTab: newTab,
+        mainSlide: filterTabGallery[0].id,
       });
     }, 250);
-    setTimeout(() => {
-      this.setState({
-        mainSlide: newSlide[1].id,
-      });
-      console.log(this.state.mainSlide);
-    }, 350);
   }
+
   slideChange(newSlide) {
-    this.rowRef.current.classList = styles.product + '  fade';
+    this.rowRef.current.classList = styles.product + '  fade show';
     this.setState({ mainSlide: newSlide });
   }
 
