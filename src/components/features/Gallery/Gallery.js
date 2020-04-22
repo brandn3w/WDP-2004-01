@@ -74,11 +74,6 @@ class Gallery extends React.Component {
   }
   prevButon() {
     const { startIndex, finishIndex } = this.state;
-    const productCount = {
-      desktops: 3,
-      tablets: 2,
-      phones: 0,
-    };
 
     if (startIndex > 1 && finishIndex > 0) {
       this.setState({
