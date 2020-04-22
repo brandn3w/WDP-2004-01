@@ -51,11 +51,17 @@ class Gallery extends React.Component {
       tablets: 2,
       phones: 0,
     };
+    const filterTabGallery = this.props.products.filter(
+      item => item[this.state.activeTab]
+    );
 
-    if (finishIndex < this.props.products.length) {
+    if (
+      finishIndex <
+      filterTabGallery.length - productCount[this.props.windowMode] - 1
+    ) {
       this.setState({
-        startIndex: startIndex + productCount[this.props.windowMode],
-        finishIndex: finishIndex + productCount[this.props.windowMode],
+        startIndex: startIndex + 1,
+        finishIndex: finishIndex + 1,
       });
     } else {
       this.setState({
@@ -76,8 +82,8 @@ class Gallery extends React.Component {
 
     if (startIndex > 1 && finishIndex > 0) {
       this.setState({
-        startIndex: startIndex - productCount[this.props.windowMode],
-        finishIndex: finishIndex - productCount[this.props.windowMode],
+        startIndex: startIndex - 1,
+        finishIndex: finishIndex - 1,
       });
     } else {
       this.setState({
