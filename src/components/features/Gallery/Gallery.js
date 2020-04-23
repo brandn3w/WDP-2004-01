@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Gallery.module.scss';
 import SwipeWrapper from '../../common/SwipeWrapper/SwipeWrapper';
@@ -12,7 +12,37 @@ class Gallery extends React.Component {
     finishIndex: 2,
     toRight: false,
     toLeft: true,
+    activeTab: 'topseller',
+    mainSlide: 'aenean-ru-bristique-14',
+    newSlide: '',
   };
+  constructor(props) {
+    super(props);
+    this.rowRef = createRef();
+    this.silderRef = createRef();
+  }
+
+  TabChange(newTab) {
+    this.silderRef.current.className = styles.slider + ' fade show';
+    this.rowRef.current.className = styles.product + '  fade show';
+
+    this.setState({
+      activeTab: newTab,
+    });
+    setTimeout(() => {
+      const filterTabGallery = this.props.products.filter(
+        item => item[this.state.activeTab]
+      );
+      this.setState({
+        mainSlide: filterTabGallery[0].id,
+      });
+    }, 250);
+  }
+
+  slideChange(newSlide) {
+    this.rowRef.current.classList = styles.product + '  fade show';
+    this.setState({ mainSlide: newSlide });
+  }
 
   nextButon() {
     const { startIndex, finishIndex } = this.state;
@@ -21,11 +51,17 @@ class Gallery extends React.Component {
       tablets: 2,
       phones: 0,
     };
+    const filterTabGallery = this.props.products.filter(
+      item => item[this.state.activeTab]
+    );
 
-    if (finishIndex < this.props.products.length) {
+    if (
+      finishIndex <
+      filterTabGallery.length - productCount[this.props.windowMode] - 1
+    ) {
       this.setState({
-        startIndex: startIndex + productCount[this.props.windowMode],
-        finishIndex: finishIndex + productCount[this.props.windowMode],
+        startIndex: startIndex + 1,
+        finishIndex: finishIndex + 1,
       });
     } else {
       this.setState({
@@ -38,16 +74,11 @@ class Gallery extends React.Component {
   }
   prevButon() {
     const { startIndex, finishIndex } = this.state;
-    const productCount = {
-      desktops: 3,
-      tablets: 2,
-      phones: 0,
-    };
 
     if (startIndex > 1 && finishIndex > 0) {
       this.setState({
-        startIndex: startIndex - productCount[this.props.windowMode],
-        finishIndex: finishIndex - productCount[this.props.windowMode],
+        startIndex: startIndex - 1,
+        finishIndex: finishIndex - 1,
       });
     } else {
       this.setState({
@@ -61,12 +92,21 @@ class Gallery extends React.Component {
 
   render() {
     const { products, galleryTabs, setCustomerStars, windowMode } = this.props;
-    const { startIndex, finishIndex } = this.state;
+    const { startIndex, finishIndex, activeTab, mainSlide } = this.state;
     const productCount = {
-      desktops: 3,
+      desktops: 4,
       tablets: 2,
       phones: 1,
     };
+    const filterTabGallery = products.filter(item => item[activeTab]);
+
+    if (this.rowRef.current) {
+      this.rowRef.current.className = styles.product;
+    }
+    if (this.silderRef.current) {
+      this.silderRef.current.className = styles.slider;
+    }
+
     return (
       <div className={styles.root}>
         <div className='container'>
@@ -79,54 +119,45 @@ class Gallery extends React.Component {
               </div>
               <div className={styles.menu}>
                 <ul>
-                  {galleryTabs.map(tab => {
-                    if (tab.active) {
-                      return (
-                        <li key={tab.id}>
-                          <a href='#' className={styles.active}>
-                            {tab.name}
-                          </a>
-                        </li>
-                      );
-                    } else {
-                      return (
-                        <li key={tab.id}>
-                          <a href='#'>{tab.name}</a>
-                        </li>
-                      );
-                    }
-                  })}
+                  {galleryTabs.map(tab => (
+                    <li key={tab.id}>
+                      <a
+                        className={tab.id === activeTab ? styles.active : undefined}
+                        onClick={() => this.TabChange(tab.id)}
+                      >
+                        {tab.name}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
-              <div className={styles.product}>
-                {products.slice(21).map(product => (
-                  <div key={product.id} className={styles.product}>
-                    <img src={product.image} alt={product.name} />
-                    <GalleryIcons />
-                    <GalleryDetails
-                      id={product.id}
-                      name={product.name}
-                      price={product.price}
-                      oldPrice={product.oldPrice}
-                      stars={product.stars}
-                      customerStars={product.customerStars}
-                      setCustomerStars={setCustomerStars}
-                    />
-                  </div>
-                ))}
+              <div ref={this.rowRef} className={styles.product}>
+                {filterTabGallery
+                  .filter(product => product.id === mainSlide)
+                  .map(product => (
+                    <div key={product.id} className={styles.product}>
+                      <img src={product.image} alt={product.name} />
+                      <GalleryIcons />
+                      <GalleryDetails
+                        id={product.id}
+                        name={product.name}
+                        price={product.price}
+                        oldPrice={product.oldPrice}
+                        stars={product.stars}
+                        customerStars={product.customerStars}
+                        setCustomerStars={setCustomerStars}
+                      />
+                    </div>
+                  ))}
               </div>
               <SwipeWrapper
-                leftAction={() =>
-                  this.nextButon(finishIndex + productCount[windowMode])
-                }
-                rightAction={() =>
-                  this.prevButon(finishIndex - productCount[windowMode])
-                }
+                leftAction={() => this.nextButon()}
+                rightAction={() => this.prevButon()}
                 trackMouse
                 preventDefaultTouchmoveEvent
               >
-                <div className={styles.slider}>
+                <div ref={this.silderRef} className={styles.slider}>
                   <div className={styles.navigation}>
                     <a
                       href='#'
@@ -139,10 +170,16 @@ class Gallery extends React.Component {
                     </a>
                   </div>
                   <div className={styles.thumbnailBox}>
-                    {products
+                    {filterTabGallery
                       .slice(startIndex, finishIndex + productCount[windowMode])
                       .map(product => (
-                        <div key={product.id} className={styles.thumbnail}>
+                        <div
+                          onClick={() => {
+                            this.slideChange(product.id);
+                          }}
+                          key={product.id}
+                          className={styles.thumbnail}
+                        >
                           <img src={product.image} alt={product.name}></img>
                         </div>
                       ))}

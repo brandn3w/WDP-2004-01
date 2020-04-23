@@ -20,6 +20,7 @@ class NewFurniture extends React.Component {
     setTimeout(() => {
       this.setState({ activePage: newPage });
     }, 250);
+    console.log(this.rowRef.current.className);
   }
 
   handleCategoryChange(newCategory) {
