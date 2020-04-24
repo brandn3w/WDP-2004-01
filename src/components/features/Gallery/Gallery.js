@@ -40,8 +40,11 @@ class Gallery extends React.Component {
   }
 
   slideChange(newSlide) {
-    this.rowRef.current.classList = styles.product + '  fade show';
-    this.setState({ mainSlide: newSlide });
+    this.rowRef.current.classList = styles.product + '  fade';
+
+    setTimeout(() => {
+      this.setState({ mainSlide: newSlide });
+    }, 500);
   }
 
   nextButon() {

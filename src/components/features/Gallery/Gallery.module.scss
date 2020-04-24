@@ -50,6 +50,7 @@
           list-style: none;
           display: flex;
           align-items: stretch;
+          cursor: pointer;
         }
       }
 
@@ -230,7 +231,7 @@
         height: 100%;
         margin: 0 5px;
         overflow: hidden;
-
+        cursor: pointer;
         .active {
           opacity: 1;
         }
