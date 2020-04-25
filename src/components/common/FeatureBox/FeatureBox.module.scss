@@ -4,6 +4,7 @@
   border: 1px solid $root-border-color;
   text-align: center;
   margin-top: 40px;
+  height: 140px;
 
   .iconWrapper {
     height: 60px;
@@ -57,8 +58,6 @@
       margin: 0;
     }
 
-    p {
-    }
   }
 
   &:hover {

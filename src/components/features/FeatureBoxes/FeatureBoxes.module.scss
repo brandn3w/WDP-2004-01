@@ -2,4 +2,14 @@
 
 .root {
   padding: 5rem 0;
+  height: auto;
+
+  .col-md-3{
+    div{
+      border: 1px solid $root-border-color;
+      text-align: center;
+      margin-top: 40px;
+      height: 140px;  
+      }
+  }
 }
