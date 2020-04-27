@@ -68,13 +68,13 @@ class Brands extends React.Component {
 
     return (
       <div className={'container'}>
-        <div className={styles.componentContainer}>
-          <SwipeWrapper
-            leftAction={() => this.nextButton()}
-            rightAction={() => this.prevButton()}
-            trackMouse
-            preventDefaultTouchmoveEvent
-          >
+        <SwipeWrapper
+          leftAction={() => this.nextButton()}
+          rightAction={() => this.prevButton()}
+          trackMouse
+          preventDefaultTouchmoveEvent
+        >
+          <div className={styles.componentContainer}>
             <div className={styles.swipe}>
               <FontAwesomeIcon icon={faChevronLeft} className={styles.icon} />
               <a
@@ -85,14 +85,15 @@ class Brands extends React.Component {
                 }}
               ></a>
             </div>
-            {brands
-              .slice((startIndex, finishIndex + brandCount[windowMode]))
-              .map(brands => (
-                <div key={brands.id} className={styles.brandContainer}>
-                  <BrandsBox {...brands} />
-                </div>
-              ))}
-
+            <div className={styles.brandBox}>
+              {brands
+                .slice((startIndex, finishIndex + brandCount[windowMode]))
+                .map(brands => (
+                  <div key={brands.id} className={styles.brandContainer}>
+                    <BrandsBox {...brands} />
+                  </div>
+                ))}
+            </div>
             <div className={styles.swipe}>
               <FontAwesomeIcon icon={faChevronRight} className={styles.icon} />
               <a
@@ -103,8 +104,8 @@ class Brands extends React.Component {
                 }}
               ></a>
             </div>
-          </SwipeWrapper>
-        </div>
+          </div>
+        </SwipeWrapper>
       </div>
     );
   }

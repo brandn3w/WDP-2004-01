@@ -1,22 +1,36 @@
 @import "../../../styles/settings.scss";
 .componentContainer {
-    display: flex;
-    justify-content: space-around;
+    
     border-top: 2px solid $brands-component-container;
     border-bottom: 2px solid $brands-component-container;
     margin: 50px 0;
     padding: 25px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     .swipe{
         background: $brands-swipe;
         padding: 10px;
         display: flex;
         align-items: center;
+        height: 110px;
         .icon{
            color:  $main-color;
            font-size: 13px;
         }
     }
     .brandContainer{
-        width: fit-content;
+        height: 100%;
+       
+    }
+
+    .brandBox{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        padding: 0 10px;
+        align-items: center;
+        justify-content: space-between;
     }
 }

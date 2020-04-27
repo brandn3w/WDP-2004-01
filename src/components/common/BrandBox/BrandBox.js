@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './BrandBox.module.scss';
 
 const BrandsBox = ({ image, name }) => (
-  <div className={'col-12'}>
+  <div className={styles.thumbnail}>
     <img src={image} alt={name} className={styles.logo} />
   </div>
 );
