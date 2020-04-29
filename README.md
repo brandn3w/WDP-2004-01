@@ -38,11 +38,8 @@ Za każdym razem gdy wykonasz komendę `git commit` zostaną uruchomione testy j
 dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane w commicie.
 
 ## Konwencje i dobre praktyki
-
-<ul>
-  <li>W projekcie stosujemy jako wcięcia 2 spacje</li>
-  <li>Wszystkie kolory dajemy do zmiennych i wrzucamy do pliku settings.scss</li>
-  <li>Jeśli jakiś styl będzie się powtarzał warto z niego zrobić klasę helperową i wrzucić do global.scss.</li>
-  <li>W projekcie korzystamy z bootstrapa</li>
-  <li>Warto trzymać się zasady skauta Zawsze zostawiaj obóz czystszy, niż go zastałeś.</li>
-</ul>
+  - W projekcie stosujemy jako wcięcia 2 spacje
+  - Wszystkie kolory dajemy do zmiennych i wrzucamy do pliku settings.scss
+  - Jeśli jakiś styl będzie się powtarzał warto z niego zrobić klasę helperową i wrzucić do global.scss.
+  - W projekcie korzystamy z bootstrapa
+  - Warto trzymać się zasady skauta Zawsze zostawiaj obóz czystszy, niż go zastałeś.
